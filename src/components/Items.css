@@ -1,0 +1,67 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+.base-item--holder{
+    height: 100%;
+    width: 100%;
+    padding: 28px 30px 13px 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-auto-rows: 80px; */
+    grid-template-rows: 40px repeat(8, 80px);
+    row-gap: 30px;
+    overflow-y: scroll;
+}
+.back-button{
+    width: 50%;
+    text-align: center;
+    background-color: #ffc5ff;
+    box-sizing: border-box;
+    padding-top: 9px;
+    margin-left: 25%;
+    border-radius: 4px;
+    color: #420dab;
+    font-weight: bold;
+    transition: 200ms all;
+}
+.back-button:hover, .back-button:active{
+    background-color: #ae54c0;
+    color: white;
+}
+.item-component--holder{
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-template-rows: 24px 40px;
+    padding: 5px;
+    column-gap: 20px;
+    border-radius: 4px;
+}
+.item-component--holder:after {
+    content: "";
+    display: block;
+    width: calc(70vw - 60px);
+    margin-left: 15vw;
+    padding-top: 25px; 
+    border-bottom: 1px solid #ff8aff;
+}
+.item-component--holder > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid grey;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+.item-component--name{
+    font-weight: bold;
+    font-size: 15px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.item-component--stat{
+    font-size: 14px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}

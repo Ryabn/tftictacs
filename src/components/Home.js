@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Card } from '@material-ui/core';
 import './Home.css';
 
 export class Home extends Component {
@@ -7,14 +8,16 @@ export class Home extends Component {
         return (
             <div className="home-selection">
                 <Link to='/items'>
-                    <div className="home-selection--button home-items">
-                        Items
-                    </div>
+                    <Card className="home-selection--button home-items--button">
+                        <div className="home-selection--avatar home-items--avatar"></div>
+                        ITEMS
+                    </Card>
                 </Link>
                 <Link to='/units'>
-                    <div className="home-selection--button home-units">
-                        Units
-                    </div>
+                    <Card className="home-selection--button home-units--button">
+                        <div className="home-selection--avatar home-units--avatar"></div>
+                        UNITS
+                    </Card>
                 </Link>
             </div>
         )

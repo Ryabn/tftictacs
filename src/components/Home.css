@@ -2,40 +2,60 @@ a{
     text-decoration: none;
 }
 .home-selection{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 28px 30px 13px 30px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
+}
+a > .home-selection--button{
+    color: #5d5d5d;
+    transition: 200ms all;
 }
 .home-selection--button{
     text-align: center;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
-    padding-top: calc(50% - 0.8em - 30px);
-    font-size: 4.5em;
-    text-decoration: none !important;
-    border: 3px solid #ffffff;
-    color: white;
-    transition: 500ms all;
+    font-size: 20px;
+    transition: 200ms all;
 }
-.home-items{
-    background-color: #3f3f3f;
-    /* border: 5px solid #ff6fff; */
+.home-selection--avatar{
+    border-radius: 50%;
+    border: 2px solid #cfcfcf;
+    height: calc(40vh - 100px);
+    width: calc(40vh - 100px);
+    margin: 5vh auto 3.5vh auto;
+    transition: 200ms all;
+}
+.home-selection--button:hover, .home-selection--button:active{
+    color: #151515;
+}
+.home-items--avatar{
+    /* units image */
+    /* background-image: url('http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/1001.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+.home-items--button:hover, .home-items--button:active{
+    box-shadow: 0px 0.5px 3px #581158;
 }
-.home-items:hover, .home-items:active {
-    font-size: 4em;
-    background-color: #2e2e2e;
-    border: 10px solid #ff6fff;
+.home-items--button:hover > .home-items--avatar,
+.home-items--button:active > .home-items--avatar {
+    border-color: #ff8aff;
 }
-.home-units{
-    background-color: #3f3f3f;
-    /* border: 5px solid #ffaa64; */
+.home-units--avatar{
+    /* units image */
 }
-.home-units:hover, .home-units:active {
-    font-size: 4em;
-    background-color: #2e2e2e;
-    border: 10px solid #ffaa64;
+.home-units--button:hover, .home-units--button:active{
+    box-shadow: 0px 0.5px 3px #5e4530;
+}
+.home-units--button:hover > .home-units--avatar,
+.home-units--button:active > .home-units--avatar{
+    border-color: #ffaa64;
 }
