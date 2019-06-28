@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tftictacs/static/css/main.cd833181.chunk.css",
-    "main.js": "/tftictacs/static/js/main.f22752aa.chunk.js",
-    "main.js.map": "/tftictacs/static/js/main.f22752aa.chunk.js.map",
+    "main.css": "/tftictacs/static/css/main.b60f4ef7.chunk.css",
+    "main.js": "/tftictacs/static/js/main.40030672.chunk.js",
+    "main.js.map": "/tftictacs/static/js/main.40030672.chunk.js.map",
     "runtime~main.js": "/tftictacs/static/js/runtime~main.8dd4aa7e.js",
     "runtime~main.js.map": "/tftictacs/static/js/runtime~main.8dd4aa7e.js.map",
-    "static/js/2.6ae58c1b.chunk.js": "/tftictacs/static/js/2.6ae58c1b.chunk.js",
-    "static/js/2.6ae58c1b.chunk.js.map": "/tftictacs/static/js/2.6ae58c1b.chunk.js.map",
+    "static/js/2.ad66f25b.chunk.js": "/tftictacs/static/js/2.ad66f25b.chunk.js",
+    "static/js/2.ad66f25b.chunk.js.map": "/tftictacs/static/js/2.ad66f25b.chunk.js.map",
     "index.html": "/tftictacs/index.html",
-    "precache-manifest.6ad1b6ee9d7df700dc25f2bce2ad3d42.js": "/tftictacs/precache-manifest.6ad1b6ee9d7df700dc25f2bce2ad3d42.js",
+    "precache-manifest.f77d186de8208167f1654ba0f294f553.js": "/tftictacs/precache-manifest.f77d186de8208167f1654ba0f294f553.js",
     "service-worker.js": "/tftictacs/service-worker.js",
-    "static/css/main.cd833181.chunk.css.map": "/tftictacs/static/css/main.cd833181.chunk.css.map"
+    "static/css/main.b60f4ef7.chunk.css.map": "/tftictacs/static/css/main.b60f4ef7.chunk.css.map"
   }
 }
