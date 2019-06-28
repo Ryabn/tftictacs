@@ -9,10 +9,7 @@ export class Items extends Component {
         super(props);
         let itemComponents = [];
         BaseItems.forEach( (e, i) => {
-            console.log(e);
-            itemComponents.push(
-                <Item key={e.id} id={e.id} index={i}/>
-            );
+            itemComponents.push( <Item key={e.id} id={e.id} index={i}/> );
         });
         this.state = {
             items: itemComponents
@@ -21,7 +18,7 @@ export class Items extends Component {
     render() {
         return (
             <div className="base-item--holder">
-                <Link to='/' className="back-button" >BACK</Link>
+                <Link to='/' className="back-button"> BACK </Link>
                 {this.state.items}
             </div>
         )

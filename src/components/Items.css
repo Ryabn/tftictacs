@@ -9,8 +9,7 @@ a {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
-    /* grid-auto-rows: 80px; */
-    grid-template-rows: 40px repeat(8, 80px);
+    grid-template-rows: 40px repeat(8, 90px);
     row-gap: 30px;
     overflow-y: scroll;
 }
@@ -34,9 +33,10 @@ a {
     display: grid;
     grid-template-columns: 64px 1fr;
     grid-template-rows: 24px 40px;
-    padding: 5px;
+    padding: 10px;
     column-gap: 20px;
     border-radius: 4px;
+    white-space: nowrap;
 }
 .item-component--holder:after {
     content: "";
@@ -64,4 +64,74 @@ a {
     font-size: 14px;
     grid-column: 2/3;
     grid-row: 2/3;
+}
+/* ------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------- Built Items CSS styles--------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------- */
+.built-item--holder{
+    height: calc(100vh - 45px);
+    width: 100%;
+    padding: 28px 30px 13px 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 90px repeat(8, auto);
+    row-gap: 15px;
+    overflow-y: scroll;
+}
+.built-item-component--holder{
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-template-rows: 50px 24px auto;
+    padding: 10px;
+    column-gap: 20px;
+    border-radius: 4px;
+}
+.built-item--path{
+    font-size: 22px;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    display: grid;
+    padding: 0px 10px 0px 10px;
+    grid-template-columns: 70px 50px 30px;
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #350647;
+}
+.built-item--path > div{
+    font-size: 30px;
+    width: 40px;
+    margin-top: -5px;
+    color: grey;
+    transition: 200ms all;
+}
+.built-item-component--holder:hover > .built-item--path > div,
+.built-item-component--holder:active > .built-item--path > div{
+    color: #ff68ff;
+}
+.built-item--path > a > img{
+    height: 26px;
+    border: 2px solid grey;
+    border-radius: 50%;
+}
+.built-item-component--holder > img{
+    height: 64px;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid grey;
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+.built-item-component--name{
+    font-weight: bold;
+    font-size: 15px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.built-item-component--stat{
+    font-size: 14px;
+    grid-column: 2/3;
+    grid-row: 3/4;
 }
