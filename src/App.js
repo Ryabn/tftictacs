@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
+import Home from './components/Home';
+import Items from './components/Items';
+import ItemStats from './components/ItemStats';
+import Units from './components/Units';
+import UnitStats from './components/UnitStats';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Route exact strict path='/' component={Home} />
+            <Route exact path='/items' component={Items} />
+            <Route exact path='/items/:item' component={ItemStats} />
+            <Route exact path='/units' component={Units} />
+            <Route exact path='/units/:unit' component={UnitStats} />
+        </div>
+    );
 }
 
 export default App;
