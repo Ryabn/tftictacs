@@ -27,7 +27,6 @@ export class BuiltItem extends Component {
     render() {
         const s = this.state;
         const linkTo = '/items/' + this.props.with + '/';
-        // const linkTo = '/items';
         return (
             <div className="built-item-component--holder" style={ this.alternateColor(s.index) }>
                 <div className="built-item--path">

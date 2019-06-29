@@ -7,17 +7,25 @@ import './Items.css';
 export class ItemStats extends Component {
     constructor(props){
         super(props);
+        this.state = this.displayItemStats();
+    }
+    componentDidUpdate = ( prevProps ) => {
+        if(this.props.match.params.item !== prevProps.match.params.item){
+            this.setState(this.displayItemStats());
+        }
+    }
+    displayItemStats = () => {
         let id = this.props.match.params.item;
         let itemBuildsList = [];
         Builds[id].builds.forEach( (e, i) => {
             itemBuildsList.push(<BuiltItem key={e.intoItem * 100 + e.withItem} with={e.withItem} into={e.intoItem} index={i}/>);
         });
-        this.state = {
+        return ({
             name: Items[id].name,
             stat: Items[id].stat,
             image: Items[id].image,
             builds: itemBuildsList
-        }
+        });
     }
     render() {
         const s = this.state;

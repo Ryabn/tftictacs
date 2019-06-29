@@ -146,50 +146,116 @@ let items = [
     {
         name: `Hextech Gunblade`,
         id: 24,
-        stat: ``,
+        stat: `Heal for 25% of all damage dealt.`,
         image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3146.png`
     },
     {
         name: `Blade of the Ruined King`,
         id: 25,
-        stat: ``,
+        stat: `Wearer is also a Blademaster.`,
         image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3153.png`
     },
     {
         name: `Morellonomicon`,
         id: 26,
-        stat: ``,
+        stat: `Spells burn 5% of the enemy max HP per second.`,
         image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3165.png`
     },
     {
         name: `Locket of the Iron Solari`,
         id: 27,
-        stat: ``,
+        stat: `On start of combat, adjacent allies get 200 shield.`,
         image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3190.png`
     },
     {
         name: `Luden's Echo`,
         id: 28,
-        stat: ``,
+        stat: `Deal 200 splash damage on ability hit.`,
         image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3185.png`
     },
     {
         name: `Titanic Hydra`,
         id: 29,
-        stat: ``,
+        stat: `Attacks deal 10% of the wearer's max HP as splash.`,
         image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3748.png`
     },
     {
-        name: `Unidentified`,
+        name: `Sword of the Divine`,
         id: 30,
-        stat: `Figure it out`,
-        image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/1001.png`
+        stat: `Every 1s gain a 5% chance to gain 100% Critical Strike.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/swordofthedivine.png`
     },
     {
-        name: `Titanic Hydra`,
-        id: 3748,
-        stat: ``,
-        image: `http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/3748.png`
+        name: `Zeke's Herald`,
+        id: 31,
+        stat: `Adjacent allies gain +10% Attack Speed.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/zekesherald.png`
+    },
+    {
+        name: `Spear of Shojin`,
+        id: 32,
+        stat: `After casting, gain 15% of max mana per attack.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/spearofshojin.png`
+    },
+    {
+        name: `Zephyr`,
+        id: 33,
+        stat: `On start of combat banish an enemy.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/zephyr.png`
+    },
+    {
+        name: `Red Buff`,
+        id: 34,
+        stat: `Attacks burn for 2.5% max HP and disable healing.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/redbuff.png`
+    },
+    {
+        name: `Frozen Mallet`,
+        id: 35,
+        stat: `Wearer is also a Glacial.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/frozenmallet.png`
+    },
+    {
+        name: `Sword Breaker`,
+        id: 36,
+        stat: `Attacks have a chance to disarm.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/swordbreaker.png`
+    },
+    {
+        name: `Cursed Blade`,
+        id: 37,
+        stat: `Attacks have a low chance to Shrink (-1 enemy star level 1).`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/cursedblade.png`
+    },
+    {
+        name: `Ionic Spark`,
+        id: 38,
+        stat: `Whenever an enemy casts a spell they take 200 damage.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/ionicspark.png`
+    },
+    {
+        name: `Hush`,
+        id: 39,
+        stat: `Attacks have a high chance to Silence.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/hush.png`
+    },
+    {
+        name: `Yuumi`,
+        id: 40,
+        stat: `Wearer is also a Sorcerer.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/yuumi.png`
+    },
+    {
+        name: `Darkin`,
+        id: 41,
+        stat: `Wearer is also a Demon.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/darkin.png`
+    },
+    {
+        name: `Force of Nature`,
+        id: 42,
+        stat: `Gain +1 team size.`,
+        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/forceofnature.png`
     },
 ];
 
@@ -204,11 +270,11 @@ let builds = [
             },
             {
                 withItem: 1,
-                intoItem: 30,
+                intoItem: 34,
             },
             {
                 withItem: 2,
-                intoItem: 30,
+                intoItem: 31,
             },
             {
                 withItem: 3,
@@ -216,7 +282,7 @@ let builds = [
             },
             {
                 withItem: 4,
-                intoItem: 30,
+                intoItem: 33,
             },
             {
                 withItem: 5,
@@ -228,7 +294,7 @@ let builds = [
             },
             {
                 withItem: 7,
-                intoItem: 30,
+                intoItem: 35,
             }
         ]
     },
@@ -238,7 +304,7 @@ let builds = [
         builds: [
             {
                 withItem: 0,
-                intoItem: 30,
+                intoItem: 34,
             },
             {
                 withItem: 1,
@@ -254,7 +320,7 @@ let builds = [
             },
             {
                 withItem: 4,
-                intoItem: 30,
+                intoItem: 36,
             },
             {
                 withItem: 5,
@@ -276,7 +342,7 @@ let builds = [
         builds: [
             {
                 withItem: 0,
-                intoItem: 30,
+                intoItem: 31,
             },
             {
                 withItem: 1,
@@ -288,7 +354,7 @@ let builds = [
             },
             {
                 withItem: 3,
-                intoItem: 25,
+                intoItem: 30,
             },
             {
                 withItem: 4,
@@ -300,7 +366,7 @@ let builds = [
             },
             {
                 withItem: 6,
-                intoItem: 30,
+                intoItem: 32,
             },
             {
                 withItem: 7,
@@ -322,7 +388,7 @@ let builds = [
             },
             {
                 withItem: 2,
-                intoItem: 25,
+                intoItem: 30,
             },
             {
                 withItem: 3,
@@ -330,7 +396,7 @@ let builds = [
             },
             {
                 withItem: 4,
-                intoItem: 30,
+                intoItem: 37,
             },
             {
                 withItem: 5,
@@ -342,7 +408,7 @@ let builds = [
             },
             {
                 withItem: 7,
-                intoItem: 30,
+                intoItem: 25,
             }
         ]
     },
@@ -352,11 +418,11 @@ let builds = [
         builds: [
             {
                 withItem: 0,
-                intoItem: 30,
+                intoItem: 33,
             },
             {
                 withItem: 1,
-                intoItem: 30,
+                intoItem: 36,
             },
             {
                 withItem: 2,
@@ -364,7 +430,7 @@ let builds = [
             },
             {
                 withItem: 3,
-                intoItem: 30,
+                intoItem: 37,
             },
             {
                 withItem: 4,
@@ -372,11 +438,11 @@ let builds = [
             },
             {
                 withItem: 5,
-                intoItem: 30,
+                intoItem: 38,
             },
             {
                 withItem: 6,
-                intoItem: 30,
+                intoItem: 39,
             },
             {
                 withItem: 7,
@@ -406,7 +472,7 @@ let builds = [
             },
             {
                 withItem: 4,
-                intoItem: 30,
+                intoItem: 38,
             },
             {
                 withItem: 5,
@@ -418,7 +484,7 @@ let builds = [
             },
             {
                 withItem: 7,
-                intoItem: 30,
+                intoItem: 40,
             }
         ]
     },
@@ -436,7 +502,7 @@ let builds = [
             },
             {
                 withItem: 2,
-                intoItem: 30,
+                intoItem: 32,
             },
             {
                 withItem: 3,
@@ -444,7 +510,7 @@ let builds = [
             },
             {
                 withItem: 4,
-                intoItem: 30,
+                intoItem: 39,
             },
             {
                 withItem: 5,
@@ -456,7 +522,7 @@ let builds = [
             },
             {
                 withItem: 7,
-                intoItem: 30,
+                intoItem: 41,
             }
         ]
     },
@@ -466,7 +532,7 @@ let builds = [
         builds: [
             {
                 withItem: 0,
-                intoItem: 30,
+                intoItem: 35,
             },
             {
                 withItem: 1,
@@ -478,7 +544,7 @@ let builds = [
             },
             {
                 withItem: 3,
-                intoItem: 30,
+                intoItem: 25,
             },
             {
                 withItem: 4,
@@ -486,15 +552,15 @@ let builds = [
             },
             {
                 withItem: 5,
-                intoItem: 30,
+                intoItem: 40,
             },
             {
                 withItem: 6,
-                intoItem: 30,
+                intoItem: 41,
             },
             {
                 withItem: 7,
-                intoItem: 30,
+                intoItem: 42,
             }
         ]
     },

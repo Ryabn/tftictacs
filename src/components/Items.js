@@ -15,6 +15,7 @@ export class Items extends Component {
             items: itemComponents
         };
     }
+
     render() {
         return (
             <div className="base-item--holder">
