@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5bb5f7df8f4d53f96a8e00750f1536b4",
+    "revision": "373ddcaa47056471793c8a15e9e4ad96",
     "url": "/tftictacs/index.html"
   },
   {
-    "revision": "8b09fb3e399281d3c195",
+    "revision": "5a5cd1b1b2475f2b0cd6",
     "url": "/tftictacs/static/css/main.a434a0b1.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tftictacs/static/js/2.433fa59e.chunk.js"
   },
   {
-    "revision": "8b09fb3e399281d3c195",
-    "url": "/tftictacs/static/js/main.a5aaf503.chunk.js"
+    "revision": "5a5cd1b1b2475f2b0cd6",
+    "url": "/tftictacs/static/js/main.a2102fc4.chunk.js"
   },
   {
     "revision": "8efe814eab5bfdb0f583",

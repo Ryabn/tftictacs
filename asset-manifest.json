@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tftictacs/static/css/main.a434a0b1.chunk.css",
-    "main.js": "/tftictacs/static/js/main.a5aaf503.chunk.js",
-    "main.js.map": "/tftictacs/static/js/main.a5aaf503.chunk.js.map",
+    "main.js": "/tftictacs/static/js/main.a2102fc4.chunk.js",
+    "main.js.map": "/tftictacs/static/js/main.a2102fc4.chunk.js.map",
     "runtime~main.js": "/tftictacs/static/js/runtime~main.8dd4aa7e.js",
     "runtime~main.js.map": "/tftictacs/static/js/runtime~main.8dd4aa7e.js.map",
     "static/js/2.433fa59e.chunk.js": "/tftictacs/static/js/2.433fa59e.chunk.js",
     "static/js/2.433fa59e.chunk.js.map": "/tftictacs/static/js/2.433fa59e.chunk.js.map",
     "index.html": "/tftictacs/index.html",
-    "precache-manifest.99b59af2319b8a9bb261e5c4ba212c4c.js": "/tftictacs/precache-manifest.99b59af2319b8a9bb261e5c4ba212c4c.js",
+    "precache-manifest.91f4182dd323d18ce452081c1677b966.js": "/tftictacs/precache-manifest.91f4182dd323d18ce452081c1677b966.js",
     "service-worker.js": "/tftictacs/service-worker.js",
     "static/css/main.a434a0b1.chunk.css.map": "/tftictacs/static/css/main.a434a0b1.chunk.css.map"
   }
