@@ -25,7 +25,7 @@ a > .home-selection--button{
 }
 .home-selection--avatar{
     border-radius: 50%;
-    border: 2px solid #cfcfcf;
+    border: 5px solid #cfcfcf;
     height: calc(40vh - 100px);
     width: calc(40vh - 100px);
     margin: 5vh auto 3.5vh auto;
@@ -35,8 +35,9 @@ a > .home-selection--button{
     color: #151515;
 }
 .home-items--avatar{
-    /* units image */
-    /* background-image: url('http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/1001.png'); */
+    /* items image */
+    background-image: url('http://ddragon.leagueoflegends.com/cdn/9.13.1/img/item/4401.png');
+    filter: grayscale(90%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,18 +45,43 @@ a > .home-selection--button{
 
 .home-items--button:hover, .home-items--button:active{
     box-shadow: 0px 0.5px 3px #581158;
+    font-size: 40px;
 }
 .home-items--button:hover > .home-items--avatar,
 .home-items--button:active > .home-items--avatar {
     border-color: #ff8aff;
+    filter: grayscale(0%);
 }
 .home-units--avatar{
     /* units image */
+    background-image: url('http://ddragon.leagueoflegends.com/cdn/9.11.1/img/champion/AurelionSol.png');
+    filter: grayscale(90%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .home-units--button:hover, .home-units--button:active{
     box-shadow: 0px 0.5px 3px #5e4530;
+    font-size: 40px;
 }
 .home-units--button:hover > .home-units--avatar,
 .home-units--button:active > .home-units--avatar{
     border-color: #ffaa64;
+    filter: grayscale(0%);
+}
+
+@media (min-aspect-ratio: 1/1){
+    .home-selection{
+        padding: 28px 30px 13px 30px;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+    .home-selection--avatar{
+        height: calc(35vw - 100px);
+        width: calc(35vw - 100px);
+    }
+    .home-selection--button{
+        font-size: 10vh;
+    }
 }
