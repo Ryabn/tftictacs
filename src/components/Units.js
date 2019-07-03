@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import { UnitData } from '../assets/UnitSets';
+import { Units as UnitData } from '../assets/UnitSets';
 import Unit from './Unit.js';
+import './Units.css'
 
 export class Units extends Component {
     constructor(props){
         super(props);
+        let unitObjects = []
+        UnitData.forEach( e => {
+            unitObjects.push(<Unit key={e.id} id={e.id}/>);
+        });
         this.state = {
-            units: []
+            units: unitObjects
         }
     }
     render() {
         const s = this.state;
         return (
-            <div>
+            <div className="units-list-holder">
                 {s.units}
             </div>
         )

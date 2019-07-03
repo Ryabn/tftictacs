@@ -1,0 +1,9 @@
+.unit-holder{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+}
+.units-list-holder{
+    overflow-y: scroll;
+    height: 100%;
+}
