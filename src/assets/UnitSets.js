@@ -46,7 +46,7 @@ const classes = [
 const origins = {
 
 };
-const unitImageLink = 'http://ddragon.leagueoflegends.com/cdn/9.11.1/img/champion/';
+const unitImageLink = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/img/champion/';
 const units = [
     {
         name: 'Fiora',
@@ -331,7 +331,7 @@ const units = [
     {
         name: 'Akali',
         image: `${unitImageLink}Akali.png`,
-        cost: 3,    
+        cost: 4,    
         origin: ['Ninja'],
         class: [ 1 ],
         ability: 'Deals magic damage to all enemies in a cone.'
@@ -339,9 +339,117 @@ const units = [
     {
         name: 'Aurelion Sol',
         image: `${unitImageLink}AurelionSol.png`,
-        cost: 3,    
+        cost: 4,  
         origin: ['Dragon'],
         class: ['Sorcerer'],
         ability: 'After a .35s delay, deals magic damage to all enemies in a line.'
     },
-]
+    {
+        name: 'Brand',
+        image: `${unitImageLink}Brand.png`,
+        cost: 4,  
+        origin: ['Demon'],
+        class: ['Elementalist'],
+        ability: 'Unleashes a fireball that bounces several times between enemies, dealing magic damage with each bounce.'
+    },
+    {
+        name: 'Aurelion Sol',
+        image: `${unitImageLink}AurelionSol.png`,
+        cost: 4,  
+        origin: ['Dragon'],
+        class: ['Sorcerer'],
+        ability: 'After a .35s delay, deals magic damage to all enemies in a line.'
+    },
+    {
+        name: 'Draven',
+        image: `${unitImageLink}Draven.png`,
+        cost: 4,
+        origin: ['Imperial'],
+        class: [ 1 ],
+        ability: '(Passive) Basic attacks grant bonus on-hit physical damage and attack speed for 8 seconds, stacking up to two times.'
+    },
+    {
+        name: 'Gnar',
+        image: `${unitImageLink}Gnar.png`,
+        cost: 4,
+        origin: ['Wild', 'Yordle'],
+        class: ['Shapeshifter'],
+        ability: 'Transforms into a melee attacker for 60 seconds, gaining health, attack damage, and jumping behind the farthest enemy. After his jump, Gnar shoves all surrounding enemies 2 hexes toward his team, stunning them for 2 seconds and dealing magic damage. '
+    },
+    {
+        name: 'Kindred',
+        image: `${unitImageLink}Kindred.png`,
+        cost: 4,
+        origin: ['Phantom'],
+        class: ['Ranger'],
+        ability: 'Creates a zone around herself for several seconds that prevents nearby allies from dying. Additionally allies in the zone cannot have their health go below a 300/600/900 depending on Kindred’s level.'
+    },
+    {
+        name: 'Leona',
+        image: `${unitImageLink}Leona.png`,
+        cost: 4,
+        origin: ['Noble'],
+        class: ['Knight'],
+        ability: 'After a .625s delay, calls down a solar ray that deals magic damage and slows all enemies within it. The enemy in the center of the ray is stunned. '
+    },
+    {
+        name: 'Sejuani',
+        image: `${unitImageLink}Sejuani.png`,
+        cost: 4,
+        Origin: ['Glacial'],
+        Class: ['Knight'],
+        Ability: 'Creates a large glacial storm that detonates after 2 seconds dealing magic damage and stunning enemies within it. '
+    },
+    {
+        name: 'Anivia',
+        image: `${unitImageLink}.png`,
+        cost: 5,
+        origin: ['Glacial'],
+        class: ['Elementalist'],
+        ability: 'Channels a large hailstorm for 8 seconds, dealing magic damage every second and slwoing the attack speed of enemies inside it.'
+    },
+    {
+        name: 'Karthus',
+        image: `${unitImageLink}Karthus.png`,
+        cost: 5,
+        origin: ['Phantom'],
+        class: ['Sorcerer'],
+        ability: 'Channel for 3 seconds to deal magic damage to 4/7/10 random enemies, depending on Karthus’ level.'
+    },
+    {
+        name: 'Kayle',
+        image: `${unitImageLink}Kayle.png`,
+        cost: 5,
+        origin: ['Noble'],
+        class: ['Knight'],
+        ability: 'Targets the weakest allies, making them immune to damage and dealing magic damage at the end of the duration. '
+    },
+    {
+        name: 'Miss Fortune',
+        image: `${unitImageLink}MissFortune.png`,
+        cost: 5,
+        origin: ['Pirate'],
+        class: ['Gunslinger'],
+        ability: 'Channels for 3 seconds and first 14 waves of bullets in a cone, dealing magic damage with each wave.'
+    },
+    {
+        name: 'Swain',
+        image: `${unitImageLink}Swain.png`,
+        cost: 5,
+        Origin: ['Imperial'],
+        Class: ['Shapeshifter'],
+        Ability: 'Transforms for 6 seconds, dealing magic damage to all nearby enemies with each tick while healing for each tick. At the end of the transformation, sends out a burst of energy dealing magic damage to nearby enemies.'
+    },
+    {
+        name: 'Yasuo',
+        image: `${unitImageLink}Yasuo.png`,
+        cost: 5,
+        origin: ['Exile'],
+        class: [ 1 ],
+        ability: 'Stabs foward, dealing magic dmaage to two enemies in a line 2 hexes away. On third cast, instead launches a tornado, dealing the same magic damage and knocking enemies up for 1.25s in a line 6 hexes away. '
+    },
+];
+
+export const Units = units;
+export const Classes = classes;
+export const Origins = origins;

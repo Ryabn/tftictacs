@@ -70,6 +70,13 @@ a > .home-selection--button{
     filter: grayscale(0%);
 }
 
+@media (min-width: 1200px){
+    /* .home-selection{
+        max-width: 1000px;
+        padding: none;
+        margin: 0 auto;
+    } */
+}
 @media (min-aspect-ratio: 1/1){
     .home-selection{
         padding: 28px 30px 13px 30px;
