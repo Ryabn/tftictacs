@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Units as UnitData} from '../assets/UnitSets';
-import {Card, CardHeader, CardMedia, CardContent, Typography} from '@material-ui/core';
+import {Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography} from '@material-ui/core';
+import ExpandMoreIcon from '@material'
 import './Units.css';
 
 export class Unit extends Component {
@@ -17,7 +18,7 @@ export class Unit extends Component {
             <div className="unit-holder">
                 <Card>
                 <CardHeader
-                    avatar={<img src={s.icon} className="unit-avatar"></img>}
+                    avatar={<img src={s.icon} alt="Champion Splash" className="unit-avatar"></img>}
                     title={s.name}
                     subheader={s.cost + " Gold"}
                 />
@@ -31,6 +32,20 @@ export class Unit extends Component {
                     {s.ability}
                     </Typography>
                 </CardContent>
+                <CardActions disableSpacing>
+                    <IconButton
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="Show more"
+                    >
+                    <ExpandMoreIcon />
+                    </IconButton>
+                </CardActions>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+
+                </CardContent>
+                </Collapse>
                 </Card>
             </div>
         )

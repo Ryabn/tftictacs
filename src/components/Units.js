@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Units as UnitData } from '../assets/UnitSets';
 import Unit from './Unit.js';
-import './Units.css'
+import './Units.css';
 
 export class Units extends Component {
     constructor(props){

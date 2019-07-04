@@ -5,7 +5,7 @@
 }
 .units-list-holder{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     overflow-y: scroll;
     row-gap: 5;
     column-gap: 5;
@@ -17,5 +17,10 @@
     width: 50px;
 }
 .unit-splash{
-    height: 150px;
+    height: 0px;
+}
+@media (min-aspect-ratio: 1/1){
+    .units-list-holder{
+        grid-template-columns: 1fr 1fr;
+    }
 }
