@@ -46,7 +46,7 @@ const classes = [
 const origins = {
 
 };
-const unitIconLink = 'http://ddragon.leagueoflegends.com/cdn/9.13.1/img/champion/';
+const unitIconLink = process.env.PUBLIC_URL + '/units/';
 const unitSplashLink = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/';
 const units = [
     {
@@ -147,7 +147,16 @@ const units = [
         cost: 1,
         origin: ['Imperial'],
         class: ['Knight'],
-        ability: 'Deals magic damage to all nearby enemies and heals himself for each enemy hit.'    
+        ability: 'Deals magic damage to all nearby enemies and heals himself for each enemy hit.',
+        stats: {
+            health: [600, 1080, 2160],
+            dps: 25,
+            as:	0.5,
+            damage:	50,
+            range:	1,
+            armor: 25,
+            mr:	20
+        }
     },
     {
         name: 'Ahri',
@@ -316,7 +325,7 @@ const units = [
         splash: `${unitSplashLink}Gangplank_0.jpg`,
         cost: 3,
         origin: ['Pirate'],
-        class: ['Gunslinger'],
+        class: ['Gunslinger', 1],
         ability: '(Passive) Periodically spawns Powder Kegs. (Active) Detonates all active Powder Kegs, dealing magic damage to enemies caught in the blast. '
     },
     {
@@ -525,7 +534,7 @@ const units = [
         icon: `${unitIconLink}Swain.png`,
         splash: `${unitSplashLink}Swain_0.jpg`,
         cost: 5,
-        origin: ['Imperial'],
+        origin: ['Imperial', 'Demon'],
         class: ['Shapeshifter'],
         ability: 'Transforms for 6 seconds, dealing magic damage to all nearby enemies with each tick while healing for each tick. At the end of the transformation, sends out a burst of energy dealing magic damage to nearby enemies.'
     },

@@ -32,7 +32,7 @@ export class ItemStats extends Component {
         return (
             <div className="item-stats--holder">
                 <div className="built-item--holder">
-                    <Link to='/items' className="back-button"> BACK </Link>
+                    <Link to='/items' className="back-button"> back </Link>
                     <div className="item-component--holder" style={{backgroundColor: '#dcdcdc'}}>
                         <img src={s.image} alt={s.name + " image"} />
                         <div className="item-component--name">{ s.name }</div>

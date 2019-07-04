@@ -45,7 +45,7 @@ a > .home-selection--button{
 
 .home-items--button:hover, .home-items--button:active{
     box-shadow: 0px 0.5px 3px #581158;
-    font-size: 40px;
+    font-size: 22px;
 }
 .home-items--button:hover > .home-items--avatar,
 .home-items--button:active > .home-items--avatar {
@@ -62,7 +62,7 @@ a > .home-selection--button{
 }
 .home-units--button:hover, .home-units--button:active{
     box-shadow: 0px 0.5px 3px #5e4530;
-    font-size: 40px;
+    font-size: 22px;
 }
 .home-units--button:hover > .home-units--avatar,
 .home-units--button:active > .home-units--avatar{
@@ -83,6 +83,12 @@ a > .home-selection--button{
         grid-template-rows: 1fr;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 20px;
+    }
+    .home-units--button:hover, .home-units--button:active{
+        font-size: 40px;
+    }
+    .home-items--button:hover, .home-items--button:active{
+        font-size: 40px;
     }
     .home-selection--avatar{
         height: calc(35vw - 100px);

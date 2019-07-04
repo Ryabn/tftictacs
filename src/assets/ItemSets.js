@@ -1,4 +1,4 @@
-const itemDDragonLink = `http://ddragon.leagueoflegends.com/cdn/9.11.1/img/item/`;
+const itemDDragonLink = process.env.PUBLIC_URL + '/items/';
 let items = [
     {
         name: `Giant's Belt`,
@@ -46,7 +46,7 @@ let items = [
         name: `Spatula`,
         id: 7,
         stat: `It must do something...`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/spatula.png`
+        image: `${itemDDragonLink}spatula.png`
     },
     {
         name: `Guardian Angel`,
@@ -184,31 +184,31 @@ let items = [
         name: `Sword of the Divine`,
         id: 30,
         stat: `Every 1s gain a 5% chance to gain 100% Critical Strike.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/swordofthedivine.png`
+        image: `${itemDDragonLink}swordofthedivine.png`
     },
     {
         name: `Zeke's Herald`,
         id: 31,
         stat: `Adjacent allies gain +10% Attack Speed.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/zekesherald.png`
+        image: `${itemDDragonLink}zekesherald.png`
     },
     {
         name: `Spear of Shojin`,
         id: 32,
         stat: `After casting, gain 15% of max mana per attack.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/spearofshojin.png`
+        image: `${itemDDragonLink}spearofshojin.png`
     },
     {
         name: `Zephyr`,
         id: 33,
         stat: `On start of combat banish an enemy.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/zephyr.png`
+        image: `${itemDDragonLink}zephyr.png`
     },
     {
         name: `Red Buff`,
         id: 34,
         stat: `Attacks burn for 2.5% max HP and disable healing.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/redbuff.png`
+        image: `${itemDDragonLink}redbuff.png`
     },
     {
         name: `Frozen Mallet`,
@@ -220,37 +220,37 @@ let items = [
         name: `Sword Breaker`,
         id: 36,
         stat: `Attacks have a chance to disarm.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/swordbreaker.png`
+        image: `${itemDDragonLink}swordbreaker.png`
     },
     {
         name: `Cursed Blade`,
         id: 37,
         stat: `Attacks have a low chance to Shrink (-1 enemy star level 1).`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/cursedblade.png`
+        image: `${itemDDragonLink}cursedblade.png`
     },
     {
         name: `Ionic Spark`,
         id: 38,
         stat: `Whenever an enemy casts a spell they take 200 damage.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/ionicspark.png`
+        image: `${itemDDragonLink}ionicspark.png`
     },
     {
         name: `Hush`,
         id: 39,
         stat: `Attacks have a high chance to Silence.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/hush.png`
+        image: `${itemDDragonLink}hush.png`
     },
     {
         name: `Yuumi`,
         id: 40,
         stat: `Wearer is also a Sorcerer.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/yuumi.png`
+        image: `${itemDDragonLink}yuumi.png`
     },
     {
         name: `Darkin`,
         id: 41,
         stat: `Wearer is also a Demon.`,
-        image: `https://solomid-resources.s3.amazonaws.com/blitz/tft/items/darkin.png`
+        image: `${itemDDragonLink}darkin.png`
     },
     {
         name: `Force of Nature`,

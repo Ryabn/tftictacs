@@ -18,7 +18,7 @@ export class Items extends Component {
     render() {
         return (
             <div className="base-item--holder">
-                <Link to='/' className="back-button"> BACK </Link>
+                <Link to='/' className="back-button"> back </Link>
                 {this.state.items}
             </div>
         )

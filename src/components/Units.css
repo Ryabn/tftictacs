@@ -1,15 +1,18 @@
 .unit-holder{
     display: grid;
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 2px;
+    height: auto;
 }
 .units-list-holder{
     display: grid;
     grid-template-columns: 1fr;
     overflow-y: scroll;
-    row-gap: 5;
-    column-gap: 5;
-    height: 100%;
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 20px;
+    height: calc(100% - 10px);
+    box-sizing: border-box;
 }
 .unit-avatar{
     border-radius: 50%;
