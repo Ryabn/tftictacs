@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tftictacs/static/css/main.a434a0b1.chunk.css",
-    "main.js": "/tftictacs/static/js/main.a2102fc4.chunk.js",
-    "main.js.map": "/tftictacs/static/js/main.a2102fc4.chunk.js.map",
+    "main.css": "/tftictacs/static/css/main.e543297c.chunk.css",
+    "main.js": "/tftictacs/static/js/main.0c462cbc.chunk.js",
+    "main.js.map": "/tftictacs/static/js/main.0c462cbc.chunk.js.map",
     "runtime~main.js": "/tftictacs/static/js/runtime~main.8dd4aa7e.js",
     "runtime~main.js.map": "/tftictacs/static/js/runtime~main.8dd4aa7e.js.map",
-    "static/js/2.433fa59e.chunk.js": "/tftictacs/static/js/2.433fa59e.chunk.js",
-    "static/js/2.433fa59e.chunk.js.map": "/tftictacs/static/js/2.433fa59e.chunk.js.map",
+    "static/js/2.dadf21f4.chunk.js": "/tftictacs/static/js/2.dadf21f4.chunk.js",
+    "static/js/2.dadf21f4.chunk.js.map": "/tftictacs/static/js/2.dadf21f4.chunk.js.map",
     "index.html": "/tftictacs/index.html",
-    "precache-manifest.91f4182dd323d18ce452081c1677b966.js": "/tftictacs/precache-manifest.91f4182dd323d18ce452081c1677b966.js",
+    "precache-manifest.8341b077e1ae856ddf1e5a78ade8c908.js": "/tftictacs/precache-manifest.8341b077e1ae856ddf1e5a78ade8c908.js",
     "service-worker.js": "/tftictacs/service-worker.js",
-    "static/css/main.a434a0b1.chunk.css.map": "/tftictacs/static/css/main.a434a0b1.chunk.css.map"
+    "static/css/main.e543297c.chunk.css.map": "/tftictacs/static/css/main.e543297c.chunk.css.map"
   }
 }
