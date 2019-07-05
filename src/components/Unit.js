@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Units as UnitData} from '../assets/UnitSets';
-import {Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography} from '@material-ui/core';
+import {Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography, Table, TableBody, TableRow, TableCell} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import './Units.css';
@@ -13,10 +13,6 @@ export class Unit extends Component {
             expanded: false,
             ...data
         }
-    }
-    getStats = () => {
-        
-        return ("stats");
     }
     handleExpandClick = () => {
         this.setState(state => ({
@@ -60,7 +56,36 @@ export class Unit extends Component {
                 </CardActions>
                 <Collapse in={s.expanded} timeout="auto" unmountOnExit>
                     <CardContent>
-                        {this.getStats()}
+                        <div className="unit-card--stats">
+                            <Table>
+                                <TableBody>
+                                    <TableRow>
+                                        <TableCell>Damage/Second</TableCell>
+                                        <TableCell align="right">25</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Damage/Attack</TableCell>
+                                        <TableCell align="right">50</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Attacks/Second</TableCell>
+                                        <TableCell align="right">0.5</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Range</TableCell>
+                                        <TableCell align="right">1 Hex</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Armor</TableCell>
+                                        <TableCell align="right">25</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Magic Resist</TableCell>
+                                        <TableCell align="right">20</TableCell>
+                                    </TableRow>
+                                </TableBody>
+                            </Table>
+                        </div>
                     </CardContent>
                 </Collapse>
                 </Card>
@@ -68,5 +93,14 @@ export class Unit extends Component {
         )
     }
 }
+// stats: {
+//     health: [600, 1080, 2160],
+//     dps: 25,
+//     as:	0.5,
+//     damage:	50,
+//     range:	1,
+//     armor: 25,
+//     mr:	20
+// }
 
 export default Unit;
