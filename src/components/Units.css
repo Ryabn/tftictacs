@@ -20,10 +20,15 @@
     width: 50px;
 }
 .unit-splash{
-    height: 0px;
+    width: 100vw;
+    height: 50vw;
 }
-@media (min-aspect-ratio: 1/1){
+@media (min-width: 600px){
     .units-list-holder{
         grid-template-columns: 1fr 1fr;
+    }
+    .unit-splash{
+        width: 50vw;
+        height: 22.5vw;
     }
 }

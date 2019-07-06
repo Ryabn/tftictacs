@@ -29,16 +29,16 @@ export class Unit extends Component {
                     title={s.name}
                     subheader={s.cost + " Gold"}
                 />
-                <CardContent style={{padding: '0 0 0 16px'}}>
-                    <Typography variant="body2" color="textSecondary" component="div">
-                        <i>{ s.origin.join(' / ') + ' / ' + s.class.join( ' / ') }</i>
-                    </Typography>
-                </CardContent>
                 {/* <CardMedia
                     className="unit-splash"
                     image={s.splash}
                     title={s.name + " splash art"}
                 /> */}
+                <CardContent style={{padding: '10px 0 0 16px'}}>
+                    <Typography variant="body2" color="textSecondary" component="div">
+                        <i>{ s.origin.join(' / ') + ' / ' + s.class.join( ' / ') }</i>
+                    </Typography>
+                </CardContent>
                 <CardContent style={{padding: '10px 16px 0 16px', textAlign: 'justify'}}>
                     <Typography variant="body2" color="textSecondary" component="p">
                     {s.ability}
@@ -60,28 +60,32 @@ export class Unit extends Component {
                             <Table>
                                 <TableBody>
                                     <TableRow>
-                                        <TableCell>Damage/Second</TableCell>
-                                        <TableCell align="right">25</TableCell>
+                                        <TableCell>DPS</TableCell>
+                                        <TableCell align="right">{s.stats.dps.join(' / ')}</TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell>Damage/Attack</TableCell>
-                                        <TableCell align="right">50</TableCell>
+                                        <TableCell>DMG</TableCell>
+                                        <TableCell align="right">{s.stats.damage.join(' / ')}</TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell>Attacks/Second</TableCell>
-                                        <TableCell align="right">0.5</TableCell>
+                                        <TableCell>AS</TableCell>
+                                        <TableCell align="right">{s.stats.as}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell>Range</TableCell>
-                                        <TableCell align="right">1 Hex</TableCell>
+                                        <TableCell align="right">{s.stats.range === 1 ? '1 Hex' : s.stats.range + ' Hexes'}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell>Armor</TableCell>
-                                        <TableCell align="right">25</TableCell>
+                                        <TableCell align="right">{s.stats.armor}</TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell>Magic Resist</TableCell>
-                                        <TableCell align="right">20</TableCell>
+                                        <TableCell>MR</TableCell>
+                                        <TableCell align="right">{s.stats.mr}</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Health</TableCell>
+                                        <TableCell align="right">{s.stats.health.join(' / ')}</TableCell>
                                     </TableRow>
                                 </TableBody>
                             </Table>
