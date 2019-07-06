@@ -13,18 +13,18 @@ export class Trait extends Component {
     }
     displayBonuses = (s) => {
         return (
-            <div key={(s.id * 10) + e.count} className="trait-bonus--table">
+            <div key={s.id} className="trait-bonus--table">
                 {s.bonus.map(e => {
-                    return (
-                            <div>
-                                <b>
-                                {e.count}
-                                </b>
-                            </div>
-                            <div style={{textAlign: 'justify'}}>
-                                {e.text}
-                            </div>
-                    );
+                    return [
+                        <div>
+                            <b>
+                            {e.count}
+                            </b>
+                        </div>,
+                        <div style={{textAlign: 'justify'}}>
+                            {e.text}
+                        </div>
+                    ];
                 })}
             </div>
         )

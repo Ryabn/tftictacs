@@ -45,12 +45,15 @@
     height: calc(100% - 10px);
     box-sizing: border-box;
 }
+.trait-bonus--table > div{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(156, 156, 156);
+}
 .trait-bonus--table{
     display: grid;
     grid-template-rows: repeat( auto-fit, 30px);
     grid-row-gap: 20px;
     grid-template-columns: 20px 1fr;
-    border-bottom: 1px solid rgb(156, 156, 156);
 }
 .unit-avatar{
     border-radius: 50%;
@@ -70,6 +73,9 @@
 }
 @media (min-width: 600px){
     .units-list-holder{
+        grid-template-columns: 1fr 1fr;
+    }
+    .traits-list-holder{
         grid-template-columns: 1fr 1fr;
     }
     .unit-splash{
