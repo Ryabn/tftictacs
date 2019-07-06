@@ -1,7 +1,11 @@
-const classes = [{
-        name: 'Assassin',
+let traitIconLink = process.env.PUBLIC_URL + '/icons/trait_icon_';
+const classes = [
+    {
+        name: 'Assassins',
         text: 'Assassins leap to the farthest enemy at the start of combat and deal additional Critical Strike Damage.',
-        image: ``,
+        image: `${traitIconLink}assassin.png`,
+        id: 0,
+        color: '#451363',
         bonus: [{
                 count: 3,
                 text: '+150% critical strike damage.'
@@ -14,8 +18,11 @@ const classes = [{
         units: [ 4, 18, 23, 27, 29, 33, 37 ]
     },
     {
-        name: 'Blademaster',
+        name: 'Blademasters',
         text: 'Blademasters have a 35% chance to strike additional times each attack.',
+        image: `${traitIconLink}blademaster.png`,
+        id: 1,
+        color: '#BBCFE7',
         bonus: [{
                 count: 3,
                 text: 'One additional strike.'
@@ -28,8 +35,11 @@ const classes = [{
         units: [ 0, 20, 24, 28, 40, 50 ]
     },
     {
-        name: 'Brawler',
+        name: 'Brawlers',
         text: 'Brawlers receive bonus maximum health.',
+        image: `${traitIconLink}brawler.png`,
+        id: 2,
+        color: '#EC7D1E',
         bonus: [{
                 count: 2,
                 text: '+300 Bonus health.'
@@ -42,23 +52,342 @@ const classes = [{
         units: [ 9, 12, 19, 26, 36 ]
     },
     {
-        name: 'Brawler',
-        text: 'Brawlers receive bonus maximum health.',
-        bonus: [{
+        name: 'Elementalists',
+        text: 'Elementalists gain double mana from attacks.',
+        image: `${traitIconLink}elementalist.png`,
+        id: 3,
+        color: '#815A5E',
+        bonus: [
+            {
+                count: 3,
+                text: 'At the start of combat, summon an Elemental.'
+            }
+        ],
+        units: [ 15, 30, 39, 45 ]
+    },
+    {
+        name: 'Guardians',
+        text: '',
+        image: `${traitIconLink}guardian.png`,
+        id: 4,
+        color: '#F0D68A',
+        bonus: [
+            {
                 count: 2,
-                text: '+300 Bonus health.'
+                text: 'At the start of combat, all Guardians and adjacent allies receive +30 armor.'
+            }
+        ],
+        units: [ 13, 43 ]
+    },
+    {
+        name: 'Gunslingers',
+        text: 'After attacking, Gunslingers have a 50% chance to fire additional attacks.',
+        image: `${traitIconLink}gunslinger.png`,
+        id: 5,
+        color: '#956950',
+        bonus: [
+            {
+                count: 2,
+                text: 'Attack another random enemy.'
             },
             {
                 count: 4,
-                text: '+700 Bonus health.'
+                text: 'Attack all enemies in range.'
             }
         ],
-        units: [ 9, 12, 19, 26, 36 ]
+        units: [ 2, 7, 16, 28, 48 ]
+    },
+    {
+        name: 'Knights',
+        text: 'Knights block damage from basic attacks.',
+        image: `${traitIconLink}knight.png`,
+        id: 6,
+        color: '#8EA9D1',
+        bonus: [
+            {
+                count: 2,
+                text: '20 damage blocked.'
+            },
+            {
+                count: 4,
+                text: '40 damage blocked.'
+            },
+            {
+                count: 6,
+                text: '80 damage blocked.'
+            }
+        ],
+        units: [ 1, 5, 10, 32, 44, 47 ]
+    },
+    {
+        name: 'Rangers',
+        text: 'Rangers have a chance to double their attack speed for the next 3s.',
+        image: `${traitIconLink}ranger.png`,
+        id: 7,
+        color: '#8DDABD',
+        bonus: [
+            {
+                count: 2,
+                text: '25% chance.'
+            },
+            {
+                count: 4,
+                text: '65% chance.'
+            }
+        ],
+        units: [ 8, 22, 25, 42 ]
+    },
+    {
+        name: 'Shapeshifters',
+        text: 'Shapeshifters gain bonus maximum Health when they transform.',
+        image: `${traitIconLink}shapeshifter.png`,
+        id: 8,
+        color: '#87456B',
+        bonus: [
+            {
+                count: 3,
+                text: '+100% max health'
+            }
+        ],
+        units: [ 6, 14, 34, 41, 49 ]
+    },
+    {
+        name: 'Sorcerers',
+        text: 'Sorcerers gain double mana from attacking and allies have increased spell damage.',
+        image: `${traitIconLink}sorcerer.png`,
+        id: 9,
+        color: '#6075D9',
+        bonus: [
+            {
+                count: 3,
+                text: '+35% spell damage'
+            },
+            {
+                count: 6,
+                text: '+100% spell damage'
+            }
+        ],
+        units: [ 3, 11, 17, 31, 35, 38, 46 ]
     },
 ];
-const origins = {
+const origins = [
+    {
+        name: 'Demon',
+        text: 'Attacks from Demons have a chance to burn all of an enemy\'s mana and deal that much true damage.',
+        image: `${traitIconLink}demon.png`,
+        id: 10,
+        color: '#8D4269',
+        bonus: [{
+                count: 2,
+                text: '+40% change on hit to Mana Burn'
+            },
+            {
+                count: 4,
+                text: '+60% change on hit to Mana Burn'
+            },
+            {
+                count: 6,
+                text: '+80% change on hit to Mana Burn'
+            }
+        ],
+        units: [ 14, 22, 24, 27, 31, 39, 49 ]
+    },
+    {
+        name: 'Dragon',
+        text: '',
+        image: `${traitIconLink}dragon.png`,
+        id: 11,
+        color: '#C92B2C',
+        bonus: [{
+                count: 2,
+                text: 'Dragons are immune to Magic damage'
+            }
+        ],
+        units: [ 34, 38 ]
+    },
+    {
+        name: 'Exile',
+        text: '',
+        image: `${traitIconLink}exile.png`,
+        id: 12,
+        color: '#B8B7A3',
+        bonus: [{
+                count: 1,
+                text: 'If an Exile has no adjacent allies at the start of combat, they gain a shield equal to a 100% max health.'
+            }
+        ],
+        units: [ 50 ]
+    },
+    {
+        name: 'Glacial',
+        text: 'On hit, Glacials have a chance to stun for 2s.',
+        image: `${traitIconLink}glacial.png`,
+        id: 13,
+        color: '#66DFFF',
+        bonus: [
+            {
+                count: 2,
+                text: '25% chance'
+            },
+            {
+                count: 4,
+                text: '35% chance'
+            },
+            {
+                count: 6,
+                text: '45% chance'
+            },
+        ],
+        units: [ 13, 15, 25, 26, 44, 45 ]
+    },
+    {
+        name: 'Robot',
+        text: '',
+        image: `${traitIconLink}robot.png`,
+        id: 14,
+        color: '#BDAB69',
+        bonus: [
+            {
+                count: 1,
+                text: ' Robots start combat at full mana.'
+            }
+        ],
+        units: [ 12 ]
+    },
+    {
+        name: 'Imperial',
+        text: 'Imperials deal Double Damage.',
+        image: `${traitIconLink}imperial.png`,
+        id: 15,
+        color: '#80000B',
+        bonus: [
+            {
+                count: 2,
+                text: '1 random Imperial'
+            },
+            {
+                count: 4,
+                text: 'All Imperials'
+            }
+        ],
+        units: [ 10, 29, 40, 49 ]
+    },
+    {
+        name: 'Noble',
+        text: 'Nobles grant +100 Armor and heal for 35 on hit',
+        image: `${traitIconLink}noble.png`,
+        id: 16,
+        color: '#EBDE16',
+        bonus: [
+            {
+                count: 3,
+                text: '1 random ally'
+            },
+            {
+                count: 6,
+                text: 'All allies'
+            }
+        ],
+        units: [ 0, 1, 8, 16, 43, 47 ]
+    },
+    {
+        name: 'Ninja',
+        text: 'Ninjas gain a percentage of Attack Damage.',
+        image: `${traitIconLink}ninja.png`,
+        id: 17,
+        color: '#B61056',
+        bonus: [
+            {
+                count: 1,
+                text: '1 Ninja only: Ninja gains +40% Attack Damage'
+            },
+            {
+                count: 4,
+                text: '4 Ninjas: All Ninjas gain +80% Attack Damage'
+            }
+        ],
+        units: [ 20, 23, 30, 37 ]
+    },
+    {
+        name: 'Pirate',
+        text: '',
+        image: `${traitIconLink}pirate.png`,
+        id: 18,
+        color: '#808101',
+        bonus: [
+            {
+                count: 3,
+                text: 'Earn up to 4 additional gold after combat against another player.'
+            }
+        ],
+        units: [ 2, 18, 28, 48 ]
+    },
+    {
+        name: 'Phantom',
+        text: '',
+        image: `${traitIconLink}phantom.png`,
+        id: 19,
+        color: '#52997F',
+        bonus: [
+            {
+                count: 2,
+                text: 'Curse a random enemy at the start of combat, setting their HP to 100.'
+            }
+        ],
+        units: [ 5, 42, 46 ]
+    },
+    {
+        name: 'Wild',
+        text: 'Attacks generate stacks of Fury (up to 5). Each stack of Fury grants 7% Attack Speed.',
+        image: `${traitIconLink}wild.png`,
+        id: 20,
+        color: '#51B241',
+        bonus: [
+            {
+                count: 2,
+                text: 'Wild allies only'
+            },
+            {
+                count: 4,
+                text: 'All allies'
+            }
+        ],
+        units: [ 6, 9, 11, 33, 41 ]
+    },
+    {
+        name: 'Void',
+        text: '',
+        image: `${traitIconLink}void.png`,
+        id: 21,
+        color: '#594A73',
+        bonus: [
+            {
+                count: 3,
+                text: 'Your team\'s basic attacks ignore 50% of the enemy\'s Armor.'
+            }
+        ],
+        units: [ 3, 4, 19, 36 ]
+    },
+    {
+        name: 'Yordle',
+        text: 'Attacks against ally Yordles have a chance to miss.',
+        image: `${traitIconLink}yordle.png`,
+        id: 22,
+        color: '#EA9069',
+        bonus: [
+            {
+                count: 3,
+                text: '25% chance to miss.'
+            },
+            {
+                count: 6,
+                text: '60% chance to miss.'
+            }
+        ],
+        units: [ 7, 17, 30, 32,35, 41 ]
+    }    
 
-};
+];
 const unitIconLink = process.env.PUBLIC_URL + '/units/';
 const unitSplashLink = process.env.PUBLIC_URL + '/units/tft_';
 const units = [{
@@ -1092,3 +1421,4 @@ const units = [{
 export const Units = units;
 export const Classes = classes;
 export const Origins = origins;
+export const Traits = classes.concat(origins);

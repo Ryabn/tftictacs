@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Units as UnitData} from '../assets/UnitSets';
-import {Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography, Table, TableBody, TableRow, TableCell} from '@material-ui/core';
+import {Card, CardHeader, CardContent, CardActions, Collapse, IconButton, Typography, Table, TableBody, TableRow, TableCell} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import './Units.css';
@@ -29,11 +29,6 @@ export class Unit extends Component {
                     title={s.name}
                     subheader={s.cost + " Gold"}
                 />
-                {/* <CardMedia
-                    className="unit-splash"
-                    image={s.splash}
-                    title={s.name + " splash art"}
-                /> */}
                 <CardContent style={{padding: '10px 0 0 16px'}}>
                     <Typography variant="body2" color="textSecondary" component="div">
                         <i>{ s.origin.join(' / ') + ' / ' + s.class.join( ' / ') }</i>

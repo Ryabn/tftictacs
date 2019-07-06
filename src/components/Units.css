@@ -4,6 +4,27 @@
     padding: 2px;
     height: auto;
 }
+.trait-holder{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2px;
+    height: auto;
+}
+.trait-unit--holder{
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(50px, 1fr) );
+    grid-template-rows: 50px;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 20px;
+}
+.trait-unit--icon{
+    height: 50px;
+    width: 50px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}
 .units-list-holder{
     display: grid;
     grid-template-columns: 1fr;
@@ -14,10 +35,34 @@
     height: calc(100% - 10px);
     box-sizing: border-box;
 }
+.traits-list-holder{
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 20px;
+    height: calc(100% - 10px);
+    box-sizing: border-box;
+}
+.trait-bonus--table{
+    display: grid;
+    grid-template-rows: repeat( auto-fit, 30px);
+    grid-row-gap: 20px;
+    grid-template-columns: 20px 1fr;
+    border-bottom: 1px solid rgb(156, 156, 156);
+}
 .unit-avatar{
     border-radius: 50%;
     height: 50px;
     width: 50px;
+}
+.trait-avatar{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .unit-splash{
     width: 100vw;
