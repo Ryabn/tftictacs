@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "040867316a0c18eb2508cb16993045df",
+    "revision": "8f4a4d4f6dac635f47e011ffbba867c3",
     "url": "/tftictacs/index.html"
   },
   {
