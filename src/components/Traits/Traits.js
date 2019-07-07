@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Traits as TraitData } from '../assets/UnitSets';
+import { Traits as TraitData } from '../../assets/UnitSets';
 import Trait from './Trait';
-import './Units.css';
+import './Traits.css';
 
 export class Traits extends Component {
     constructor(props){

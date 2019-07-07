@@ -9,7 +9,7 @@ export class Home extends Component {
                 <Link delay={190} to='/items'>
                     <div className="home-item--link home-item">
                         <div className="loading-icon--text">
-                            ITEMS
+                            items
                         </div>
                         <div className="loading-icon--holder">
                             <div className="loading-icon--hex"></div>
@@ -19,7 +19,7 @@ export class Home extends Component {
                 <Link delay={190} to='/traits'>
                     <div className="home-trait--link home-item">
                         <div className="loading-icon--text">
-                            TRAITS
+                            traits
                         </div>
                         <div className="loading-icon--holder">
                             <div className="loading-icon--hex"></div>
@@ -29,7 +29,7 @@ export class Home extends Component {
                 <Link delay={190} to='/units'>
                     <div className="home-unit--link home-item">
                         <div className="loading-icon--text">
-                            UNITS
+                            units
                         </div>
                         <div className="loading-icon--holder">
                             <div className="loading-icon--hex"></div>

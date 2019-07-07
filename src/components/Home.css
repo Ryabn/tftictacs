@@ -24,16 +24,26 @@ a{
     --hex-color: #ededed;
 }
 .home-item--link{
-    background-color: #7f00ff;
-    background: radial-gradient(45deg, #7f00ff, #e100ff);
+    /* background: linear-gradient(45deg, #7f00ff, #e100ff); */
+    transition: all 500ms;
+    background: linear-gradient(45deg, rgba(127,0,255, 0.4), rgba(225,0,255, 0.4));
+}
+.home-item--link:hover{
+    background: linear-gradient(45deg, rgba(127,0,255, 0.45), rgba(225,0,255, 0.45));
 }
 .home-trait--link{
-    background-color: #5b86e5;
-    background: linear-gradient(0deg, #36d1dc, #5b86e5); 
+    /* background: linear-gradient(0deg, #36d1dc, #5b86e5);  */
+    background: linear-gradient(0deg, rgba(54,209,220, 0.5), rgba(91,134,229, 0.5)); 
+}
+.home-trait--link:hover{
+    background: linear-gradient(0deg, rgba(54,209,220, 0.55), rgba(91,134,229, 0.55)); 
 }
 .home-unit--link{
-    background-color: #ff5e62;
-    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    /* background: linear-gradient(135deg, #ff9966, #ff5e62); */
+    background: linear-gradient(135deg, rgba(255,153,102, 0.5), rgba(255,94,98, 0.5));
+}
+.home-unit--link:hover{
+    background: linear-gradient(135deg, rgba(255,153,102, 0.55), rgba(255,94,98, 0.55));
 }
 .loading-icon--holder{
     position: relative;
@@ -151,7 +161,8 @@ a{
     .loading-icon--text{
         padding-top: 0;
         writing-mode: vertical-rl;
-        text-orientation: upright;
+        /* text-orientation: upright; */
+        letter-spacing: 35px;
         margin: 0 0 -40px calc(100vw / 6 - 12.5px);
         font-size: 20px;
         width: auto;

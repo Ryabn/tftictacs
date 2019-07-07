@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Items } from '../assets/ItemSets';
+import { Items } from '../../assets/ItemSets';
 import { Link } from 'react-router-dom';
 import './Items.css';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Items, Builds} from '../assets/ItemSets';
+import {Items, Builds} from '../../assets/ItemSets';
 import BuiltItem from './BuiltItem';
 import './Items.css';
 

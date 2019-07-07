@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Traits as TraitData, Units as UnitData} from '../assets/UnitSets';
+import {Traits as TraitData, Units as UnitData} from '../../assets/UnitSets';
 import {Card, CardHeader, CardContent, Typography} from '@material-ui/core';
-import './Units.css';
+import './Traits.css';
 
 export class Trait extends Component {
     constructor(props){

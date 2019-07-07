@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from './components/Home';
-import Items from './components/Items';
-import ItemStats from './components/ItemStats';
-import Units from './components/Units';
-import Traits from './components/Traits';
-import UnitStats from './components/UnitStats';
+import Items from './components/Items/Items';
+import ItemStats from './components/Items/ItemStats';
+import Units from './components/Units/Units';
+import UnitStats from './components/Units/UnitStats';
+import Traits from './components/Traits/Traits';
 import './App.css';
 
 function App() {
