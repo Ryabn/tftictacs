@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Link from './DelayLink';
-import { Card } from '@material-ui/core';
 import './Home.css';
 
 export class Home extends Component {

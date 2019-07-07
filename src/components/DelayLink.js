@@ -20,12 +20,10 @@ export class DelayLink extends Component {
       clearTimeout(this.timeout);
     }
   }
-  handleClick = (e) => {
+  handleClick = ( e ) => {
     const { to, delay } = this.props;
 
-    if (e.defaultPrevented) {
-      return;
-    }
+    if (e.defaultPrevented) { return; }
     e.preventDefault();
 
     this.timeout = setTimeout(() => {
