@@ -34,6 +34,7 @@ export class DelayLink extends Component {
   render() {
     const props = Object.assign({}, this.props);
     delete props.delay;
+    delete props.staticContext;
 
     return (
       <Link {...props} onClick={this.handleClick} />
