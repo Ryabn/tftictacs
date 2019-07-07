@@ -1,118 +1,201 @@
+:root{
+    --hex-width: 50px;
+    --hex-height: 30px;
+    --hex-color: #555555;
+}
 a{
     text-decoration: none;
-}
-.home-selection{
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 28px 30px 13px 30px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 20px;
-}
-a > .home-selection--button{
-    color: #5d5d5d;
-    transition: 200ms all;
-}
-.home-selection--button{
-    text-align: center;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
-    transition: 200ms all;
-}
-.home-selection--avatar{
-    border-radius: 50%;
-    border: 5px solid #cfcfcf;
-    height: calc(40vh - 100px);
-    width: calc(40vh - 100px);
-    margin: 5vh auto 3.5vh auto;
-    transition: 200ms all;
-}
-.home-selection--button:hover, .home-selection--button:active{
-    color: #151515;
-}
-.home-items--avatar{
-    /* items image */
-    background-image: url('https://ddragon.leagueoflegends.com/cdn/9.13.1/img/item/4401.png');
-    filter: grayscale(90%);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.home-items--button:hover, .home-items--button:active{
-    box-shadow: 0px 0.5px 3px #581158;
-    font-size: 22px;
-}
-.home-items--button:hover > .home-items--avatar,
-.home-items--button:active > .home-items--avatar {
-    border-color: #ff8aff;
-    filter: grayscale(0%);
-}
-.home-units--avatar{
-    /* units image */
-    background-image: url('https://ddragon.leagueoflegends.com/cdn/9.11.1/img/champion/AurelionSol.png');
-    filter: grayscale(90%);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.home-units--button:hover, .home-units--button:active{
-    box-shadow: 0px 0.5px 3px #5e4530;
-    font-size: 22px;
-}
-.home-units--button:hover > .home-units--avatar,
-.home-units--button:active > .home-units--avatar{
-    border-color: #ffaa64;
-    filter: grayscale(0%);
 }
 .home-selection--updated{
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, 1fr);
 }
-
-.home-item--link{
-    background: linear-gradient(45deg, #7f00ff, #e100ff);
+.home-item{
+    box-sizing: border-box;
+    padding-top: 0vh;
     height: 100%;
+    transition: 200ms all;
+}
+.home-item:hover, .home-item:active{
+    color: #efefef;
+    --hex-color: #ededed;
+}
+.home-item--link{
+    background-color: #7f00ff;
+    background: radial-gradient(45deg, #7f00ff, #e100ff);
 }
 .home-trait--link{
-    background-color: #91bbff;
+    background-color: #5b86e5;
     background: linear-gradient(0deg, #36d1dc, #5b86e5); 
-    height: 100%;
 }
 .home-unit--link{
-    background-color: #ffc89b;
+    background-color: #ff5e62;
     background: linear-gradient(135deg, #ff9966, #ff5e62);
-    height: 100%;
+}
+.loading-icon--holder{
+    position: relative;
+    transition: all 200ms;
+    transform: perspective(600px) rotateX(55deg);
+    padding-left: calc( 50vw - ( var(--hex-width) / 2 ) );
+    z-index: 2;
+}
+.loading-icon--text{
+    font-weight: bold;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+    font-size: 40px;
+}
+.loading-icon--hex:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-bottom: calc( var(--hex-height) / 2) solid var(--hex-color);
+    border-left: calc( var(--hex-width) / 2 ) solid transparent;
+    border-right: calc( var(--hex-width) / 2 ) solid transparent;
+    position: absolute;
+    transition: 200ms all;
+    top: calc( var(--hex-height) / -2);
+    
+}
+.loading-icon--hex {
+    position: absolute;
+    top: 150px;
+    width: var(--hex-width);
+    height: var(--hex-height);
+    background-color: var(--hex-color);
+    transition: 200ms all;
+    box-shadow: 0px 0px 35px 15px rgba(55, 192, 255, 0.7),
+                0 30px 35px -5px rgba(55, 192, 255, 0.7),
+                0 60px 35px -18px rgba(55, 192, 255, 0.7),
+                0 75px 35px -27px rgba(55, 192, 255, 0.7),
+                0 -30px 35px -5px rgba(55, 192, 255, 0.7),
+                0 -60px 35px -18px rgba(55, 192, 255, 0.7);
+
+}
+.loading-icon--hex:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    transition: 200ms all;
+    bottom: calc( var(--hex-height) / -2 );
+    border-top: calc( var(--hex-height) / 2 ) solid var(--hex-color);
+    border-left: calc( var(--hex-width) / 2 ) solid transparent;
+    border-right: calc( var(--hex-width) / 2 ) solid transparent;
+}
+@media (max-aspect-ratio: 1/1){
+    .home-selection--updated{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+    }
+    .loading-icon--text{
+        font-weight: bold;
+        position: relative;
+        padding-top: 8%;
+        letter-spacing: 5px;
+        width: 100%;
+        margin-bottom: -23%;
+        z-index: 5;
+        text-align: center;
+        font-size: 40px;
+    }
+    .home-item:hover, .home-item:active{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+@media (max-aspect-ratio: 1/1) and (min-height: 600px){
+    :root{
+        --hex-width: 70px;
+        --hex-height: 40px;
+    }
+}
+@media (max-aspect-ratio: 1/1) and (min-height: 700px){
+    :root{
+        --hex-width: 80px;
+        --hex-height: 50px;
+    }
+    .loading-icon--text{
+        padding-top: 10%;
+        margin-bottom: -20%;
+        font-size: 50px;
+    }
+}
+@media (max-aspect-ratio: 1/1) and (min-height: 1000px){
+    :root{
+        --hex-width: 100px;
+        --hex-height: 60px;
+    }
+    .loading-icon--text{
+        padding-top: 10%;
+        margin-bottom: -5%;
+        font-size: 70px;
+    }
 }
 @media (min-aspect-ratio: 1/1){
-    .home-selection{
-        padding: 28px 30px 13px 30px;
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 20px;
-    }
-    .home-units--button:hover, .home-units--button:active{
-        font-size: 40px;
-    }
-    .home-items--button:hover, .home-items--button:active{
-        font-size: 40px;
-    }
-    .home-selection--avatar{
-        height: calc(35vw - 100px);
-        width: calc(35vw - 100px);
-    }
-    .home-selection--button{
-        font-size: 10vh;
-    }
     .home-selection--updated{
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
+    }
+    .home-item{
+        padding-top: 12vh;
+        height: 100%;
+    }
+    .home-item:hover, .home-item:active{
+        padding-top: 18vh;
+    }
+    .loading-icon--text{
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        margin: 0 0 -70px calc(100vw / 6 - 12.5px);
+    }
+}
+@media (min-aspect-ratio: 1/1) and (min-height: 400px) {
+    :root{
+        --hex-width: 80px;
+        --hex-height: 50px;
+    }
+    .home-item{
+        padding-top: 13vh;
+    }
+    .home-item:hover{
+        padding-top: 17vh;
+    }
+    .loading-icon--text{
+        margin: 0 0 -30px calc(100vw / 6 - 12.5px);
+        font-size: 25px;
+    }
+}
+@media (min-aspect-ratio: 1/1) and (min-height: 600px) {
+    :root{
+        --hex-width: 104px;
+        --hex-height: 60px;
+    }
+    .home-item{
+        padding-top: 20vh;
+    }
+    .home-item:hover{
+        padding-top: 25vh;
+    }
+    .loading-icon--text{
+        margin: 0 0 -30px calc(100vw / 6 - 15px);
+        font-size: 30px;
+    }
+}
+@media (min-aspect-ratio: 1/1) and (min-height: 750px){
+    :root{
+        --hex-width: 104px;
+        --hex-height: 60px;
+    }
+    .home-item{
+        padding-top: 20vh;
+    }
+    .home-item:hover{
+        padding-top: 25vh;
+    }
+    .loading-icon--text{
+        margin: 0 0 -30px calc(100vw / 6 - 25px);
+        font-size: 40px;
     }
 }

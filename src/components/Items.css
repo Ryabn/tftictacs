@@ -3,6 +3,7 @@ a {
     color: black;
 }
 .base-item--holder{
+    /* background: linear-gradient(45deg, #7f00ff, #e100ff); */
     height: 100%;
     width: 100%;
     padding: 28px 30px 13px 30px;

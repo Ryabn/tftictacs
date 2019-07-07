@@ -26,6 +26,7 @@
     border-radius: 50%;
 }
 .units-list-holder{
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
     display: grid;
     grid-template-columns: 1fr;
     overflow-y: scroll;
@@ -36,6 +37,7 @@
     box-sizing: border-box;
 }
 .traits-list-holder{
+    background: linear-gradient(0deg, #36d1dc, #5b86e5); 
     display: grid;
     grid-template-columns: 1fr;
     overflow-y: scroll;

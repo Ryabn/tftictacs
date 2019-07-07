@@ -21,7 +21,7 @@ function App() {
                 <Route exact path='/units/:unit' component={UnitStats} />
             </div>
             <div className="legal-jibber-jabber">
-                TFTictacs was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
+                tft.help was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
             </div>
         </div>
     );
