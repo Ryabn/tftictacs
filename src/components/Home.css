@@ -162,7 +162,7 @@ a{
         padding-top: 0;
         writing-mode: vertical-rl;
         /* text-orientation: upright; */
-        letter-spacing: 35px;
+        letter-spacing: 15px;
         margin: 0 0 -40px calc(100vw / 6 - 12.5px);
         font-size: 20px;
         width: auto;
@@ -185,6 +185,7 @@ a{
         padding-top: 17vh;
     }
     .loading-icon--text{
+        letter-spacing: 20px;
         margin: 0 0 -30px calc(100vw / 6 - 12.5px);
         font-size: 25px;
     }
@@ -201,6 +202,7 @@ a{
         padding-top: 25vh;
     }
     .loading-icon--text{
+        letter-spacing: 25px;
         margin: 0 0 -30px calc(100vw / 6 - 15px);
         font-size: 30px;
     }
@@ -217,6 +219,7 @@ a{
         padding-top: 25vh;
     }
     .loading-icon--text{
+        letter-spacing: 35px;
         margin: 0 0 -30px calc(100vw / 6 - 25px);
         font-size: 40px;
     }
