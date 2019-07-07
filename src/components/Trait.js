@@ -17,9 +17,7 @@ export class Trait extends Component {
                 {s.bonus.map(e => {
                     return [
                         <div>
-                            <b>
-                            {e.count}
-                            </b>
+                            <b>{e.count} </b>
                         </div>,
                         <div style={{textAlign: 'justify'}}>
                             {e.text}

@@ -6,8 +6,8 @@ import './Home.css';
 export class Home extends Component {
     render() {
         return (
-            <div className="home-selection">
-                <Link to='/items'>
+            <div className="home-selection--updated">
+                {/* <Link to='/items'>
                     <Card className="home-selection--button home-items--button">
                         <div className="home-selection--avatar home-items--avatar"></div>
                         ITEMS
@@ -18,6 +18,21 @@ export class Home extends Component {
                         <div className="home-selection--avatar home-units--avatar"></div>
                         UNITS
                     </Card>
+                </Link> */}
+                <Link to='/items'>
+                    <div className="home-item--link">
+                        items
+                    </div>
+                </Link>
+                <Link to='/traits'>
+                    <div className="home-trait--link">
+                        traits
+                    </div>
+                </Link>
+                <Link to='/units'>
+                    <div className="home-unit--link">
+                        units
+                    </div>
                 </Link>
             </div>
         )
