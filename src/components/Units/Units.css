@@ -4,10 +4,12 @@
     padding: 2px;
     height: auto;
 }
-
-.units-list-holder{
-    /* background: linear-gradient(135deg, #ff9966, #ff5e62); */
+.app-container{
+    width: 100%; 
+    height: 100%;
     background: linear-gradient(135deg, rgba(255,153,102, 0.5), rgba(255,94,98, 0.5));
+}
+.units-list-holder{
     display: grid;
     grid-template-columns: 1fr;
     overflow-y: scroll;
@@ -16,6 +18,8 @@
     padding: 20px;
     height: calc(100% - 10px);
     box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
 .unit-avatar{

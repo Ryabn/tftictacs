@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Units as UnitData} from '../../assets/UnitSets';
+import {Units as UnitData, Traits as TraitData} from '../../assets/UnitSets';
 import {Card, CardHeader, CardContent, CardActions, Collapse, IconButton, Typography, Table, TableBody, TableRow, TableCell} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
@@ -19,8 +19,13 @@ export class Unit extends Component {
             expanded: !state.expanded
         }));
     }
-    getTraits = () => {
-        
+    getTraits = (s) => {
+        return <i> { s.origin.map( e => {
+            return TraitData[e].name;
+        }).join(' / ') + ' / ' + s.class.map( e => {
+            return TraitData[e].name;
+        }).join(' / ')}</i>;
+
     }
     render() {
         const s = this.state;
@@ -34,8 +39,7 @@ export class Unit extends Component {
                 />
                 <CardContent style={{padding: '10px 0 0 16px'}}>
                     <Typography variant="body2" color="textSecondary" component="div">
-                        {/* <i>{ s.origin.join(' / ') + ' / ' + s.class.join( ' / ') }</i> */}
-                        {this.getTraits()}
+                        {this.getTraits(s)}
                     </Typography>
                 </CardContent>
                 <CardContent style={{padding: '10px 16px 0 16px', textAlign: 'justify'}}>

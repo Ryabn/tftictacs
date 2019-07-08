@@ -17,8 +17,10 @@ export class Units extends Component {
     render() {
         const s = this.state;
         return (
-            <div className="units-list-holder">
-                {s.units}
+            <div className="app-container">
+                <div className="units-list-holder">
+                    {s.units}
+                </div>
             </div>
         )
     }

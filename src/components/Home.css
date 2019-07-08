@@ -72,7 +72,6 @@ a{
     position: absolute;
     transition: 200ms all;
     top: calc( var(--hex-height) / -2);
-    
 }
 .loading-icon--hex {
     position: absolute;

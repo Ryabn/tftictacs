@@ -1,7 +1,7 @@
 let traitIconLink = process.env.PUBLIC_URL + '/icons/trait_icon_';
 const classes = [
     {
-        name: 'Assassins',
+        name: 'Assassin',
         text: 'Assassins leap to the farthest enemy at the start of combat and deal additional Critical Strike Damage.',
         image: `${traitIconLink}assassin.png`,
         id: 0,
@@ -18,7 +18,7 @@ const classes = [
         units: [ 4, 18, 23, 27, 29, 33, 37 ]
     },
     {
-        name: 'Blademasters',
+        name: 'Blademaster',
         text: 'Blademasters have a 35% chance to strike additional times each attack.',
         image: `${traitIconLink}blademaster.png`,
         id: 1,
@@ -35,7 +35,7 @@ const classes = [
         units: [ 0, 20, 24, 28, 40, 50 ]
     },
     {
-        name: 'Brawlers',
+        name: 'Brawler',
         text: 'Brawlers receive bonus maximum health.',
         image: `${traitIconLink}brawler.png`,
         id: 2,
@@ -52,7 +52,7 @@ const classes = [
         units: [ 9, 12, 19, 26, 36 ]
     },
     {
-        name: 'Elementalists',
+        name: 'Elementalist',
         text: 'Elementalists gain double mana from attacks.',
         image: `${traitIconLink}elementalist.png`,
         id: 3,
@@ -66,7 +66,7 @@ const classes = [
         units: [ 15, 30, 39, 45 ]
     },
     {
-        name: 'Guardians',
+        name: 'Guardian',
         text: '',
         image: `${traitIconLink}guardian.png`,
         id: 4,
@@ -80,7 +80,7 @@ const classes = [
         units: [ 13, 43 ]
     },
     {
-        name: 'Gunslingers',
+        name: 'Gunslinger',
         text: 'After attacking, Gunslingers have a 50% chance to fire additional attacks.',
         image: `${traitIconLink}gunslinger.png`,
         id: 5,
@@ -98,7 +98,7 @@ const classes = [
         units: [ 2, 7, 16, 28, 48 ]
     },
     {
-        name: 'Knights',
+        name: 'Knight',
         text: 'Knights block damage from basic attacks.',
         image: `${traitIconLink}knight.png`,
         id: 6,
@@ -120,7 +120,7 @@ const classes = [
         units: [ 1, 5, 10, 32, 44, 47 ]
     },
     {
-        name: 'Rangers',
+        name: 'Ranger',
         text: 'Rangers have a chance to double their attack speed for the next 3s.',
         image: `${traitIconLink}ranger.png`,
         id: 7,
@@ -138,7 +138,7 @@ const classes = [
         units: [ 8, 22, 25, 42 ]
     },
     {
-        name: 'Shapeshifters',
+        name: 'Shapeshifter',
         text: 'Shapeshifters gain bonus maximum Health when they transform.',
         image: `${traitIconLink}shapeshifter.png`,
         id: 8,
@@ -152,7 +152,7 @@ const classes = [
         units: [ 6, 14, 34, 41, 49 ]
     },
     {
-        name: 'Sorcerers',
+        name: 'Sorcerer',
         text: 'Sorcerers gain double mana from attacking and allies have increased spell damage.',
         image: `${traitIconLink}sorcerer.png`,
         id: 9,
@@ -227,11 +227,11 @@ const origins = [
         bonus: [
             {
                 count: 2,
-                text: '25% chance'
+                text: '20% chance'
             },
             {
                 count: 4,
-                text: '35% chance'
+                text: '30% chance'
             },
             {
                 count: 6,
@@ -320,7 +320,7 @@ const origins = [
                 text: 'Earn up to 4 additional gold after combat against another player.'
             }
         ],
-        units: [ 2, 18, 28, 48 ]
+        units: [ 2, 18, 21, 28, 48 ]
     },
     {
         name: 'Phantom',
@@ -480,7 +480,7 @@ const units = [{
         splash: `${unitSplashLink}khazix.png`,
         cost: 1,
         origin: [ 21 ],
-        class: [0],
+        class: [ 0 ],
         ability: 'Deals [ 150 / 250 / 350 ] magic damage to the target enemy. This ability deals [ 400 / 600 / 800 ] extra magic damage if the target has no allies adjacent to them.',
         stats: {
             dps: [ 30, 54, 108 ],
@@ -823,15 +823,15 @@ const units = [{
         splash: `${unitSplashLink}twistedfate.png`,
         cost: 2,
         origin: [ 18 ],
-        class: [' '],
+        class: [ 9 ],
         ability: 'Twisted Fate throws a card that either stuns for [ 2 / 3 / 4 ] seconds, [ 200 / 300 / 400 ] deals damage around his target, or restores [ 20 / 35 / 50 ] mana to himself and nearby allies',
         stats: {
-            dps: [ '-', '-', '-'],
-            as: '-',
-            damage: ['-', '-', '-'],
+            dps: [30, 54, 108],
+            as: 0.75,
+            damage: [40, 72, 144],
             range: 3,
-            armor: '-',
-            mr: '-',
+            armor: 20,
+            mr: 20,
             health: [ 450, 810, 1620 ],
             critChance: 25
         }
@@ -983,7 +983,7 @@ const units = [{
         splash: `${unitSplashLink}Katarina.png`,
         cost: 3,
         origin: [ 15 ],
-        class: ['Assassin'],
+        class: [ 0 ],
         ability: 'Channels for 2.5 seconds and fires daggers at [ 3 / 5 / 7 ] nearby enemies, dealing [ 40 / 60 / 80 ] magic damage per tick (6 ticks per second) and reducing healing on them for 3 seconds.',
         stats: {
             dps: [ 30, 54, 108 ],
@@ -1123,7 +1123,7 @@ const units = [{
         splash: `${unitSplashLink}Chogath.png`,
         cost: 4,
         origin: [ 21 ],
-        class: ['Brawler'],
+        class: [ 2 ],
         ability: 'After a 1.5s delay, deals [ 200 / 400 / 600 ] magic damage and knocks up all enemies in a 3x3 area, stunning them for [ 2 / 2.25 / 2.5 ] seconds. Cho\'Gath starts with 50 mana.',
         stats: {
             dps: [ 39, 69, 139 ],
@@ -1143,7 +1143,7 @@ const units = [{
         splash: `${unitSplashLink}Akali.png`,
         cost: 4,
         origin: [ 17 ],
-        class: [1],
+        class: [ 0 ],
         ability: 'Deals [ 200 / 375 / 550 ] magic damage to all enemies in a cone.',
         stats: {
             dps: [ 53, 95, 189 ],
@@ -1403,7 +1403,7 @@ const units = [{
         splash: `${unitSplashLink}Yasuo.png`,
         cost: 5,
         origin: [ 12 ],
-        class: [1],
+        class: [ 1 ],
         ability: 'Stabs foward, dealing [ 150 / 250 / 350 ] magic dmaage to two enemies in a line 2 hexes away. On third cast, instead launches a tornado, dealing the same magic damage and knocking enemies up for 1.25s in a line 6 hexes away.',
         stats: {
             dps: [ 65, 117, 234 ],
@@ -1415,7 +1415,7 @@ const units = [{
             health: [ 700, 1260, 2520 ],
             critChance: 25
         }
-    },
+    }
 ];
 
 export const Units = units;
