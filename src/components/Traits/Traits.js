@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Traits as TraitData } from '../../assets/UnitSets';
 import Trait from './Trait';
+import Nav from '../Nav/Nav';
 import './Traits.css';
 
 export class Traits extends Component {
@@ -17,8 +18,11 @@ export class Traits extends Component {
     render() {
         const s = this.state;
         return (
-            <div className="traits-list-holder">
-                {s.traits}
+            <div className="traits-page">
+                <Nav />
+                <div className="traits-list-holder">
+                    {s.traits}
+                </div>
             </div>
         )
     }

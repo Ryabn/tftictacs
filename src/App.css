@@ -2,7 +2,7 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 .not-jibber-jabber{
-    height: calc(100vh);
+    height: 100vh;
 }
 .legal-jibber-jabber{
     height: 50px;

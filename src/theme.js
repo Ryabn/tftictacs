@@ -17,11 +17,14 @@ const theme = createMuiTheme({
             root: {
                 fontFamily: 'Quicksand'
             }   
-        }
+        },
     },
     typography: {
         useNextVariants: true,
         body2: {
+            fontFamily: 'Quicksand'
+        },
+        h6: {
             fontFamily: 'Quicksand'
         }
     }

@@ -1,0 +1,13 @@
+.nav-search--holder{
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    margin-left: 100px;
+}
+.nav-drawer{
+    width: 250px;
+}
+.nav{
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: transparent;
+}

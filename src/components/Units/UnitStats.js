@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
 import Unit from './Unit';
 import {Traits as TraitData} from '../../assets/UnitSets';
 import './Units.css';
@@ -28,6 +29,7 @@ export class UnitStats extends Component {
         let s = this.state;
         return (
             <div>
+                <Nav />
                 {s}
             </div>
         )

@@ -14,12 +14,12 @@ export class Trait extends Component {
     displayBonuses = (s) => {
         return (
             <div key={s.id} className="trait-bonus--table">
-                {s.bonus.map(e => {
+                {s.bonus.map((e, i) => {
                     return [
-                        <div>
+                        <div key={i}>
                             <b>{e.count} </b>
                         </div>,
-                        <div style={{textAlign: 'justify'}}>
+                        <div key={i+100} style={{textAlign: 'justify'}}>
                             {e.text}
                         </div>
                     ];
@@ -29,7 +29,7 @@ export class Trait extends Component {
     }
     displayUnits = (s) => {
         return s.units.map( e => {
-            return <div className="trait-unit--icon" style={{backgroundImage: `url('${UnitData[e].icon}')`}}></div>;
+            return <div key={e} className="trait-unit--icon" style={{backgroundImage: `url('${UnitData[e].icon}')`}}></div>;
         });
     }
     render() {
@@ -43,7 +43,7 @@ export class Trait extends Component {
                     subheader={s.text}
                 />
                 <CardContent style={{padding: '10px 16px 0 16px', textAlign: 'justify'}}>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="div">
                         {this.displayBonuses(s)}
                     </Typography>
                     <div className="trait-unit--holder">
