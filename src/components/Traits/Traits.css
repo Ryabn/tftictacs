@@ -22,6 +22,7 @@
 .traits-page{
     /* background: linear-gradient(0deg, #36d1dc, #5b86e5);  */
     background: linear-gradient(0deg, rgba(54,209,220, 0.5), rgba(91,134,229, 0.5)); 
+    /* height: 100%; */
 }
 .traits-list-holder{
     display: grid;
@@ -30,7 +31,7 @@
     row-gap: 20px;
     column-gap: 20px;
     padding: 20px;
-    height: calc(100% - 10px);
+    height: calc(100%);
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1000px;

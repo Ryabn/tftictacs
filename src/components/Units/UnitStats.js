@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Unit from './Unit';
-import {Traits as TraitData} from '../../assets/UnitSets';
+import {Traits as TraitData, Units as UnitData} from '../../assets/UnitSets';
 import './Units.css';
 
 export class UnitStats extends Component {
@@ -10,16 +10,14 @@ export class UnitStats extends Component {
         this.state = this.displayUnitStats();
     }
     componentDidUpdate = ( prevProps ) => {
-        if(this.props.match.params.item !== prevProps.match.params.item){
+        if(this.props.match.params.unit !== prevProps.match.params.unit){
             this.setState(this.displayUnitStats());
         }
     }
     displayUnitStats = () => {
-        let id = this.props.match.params.item;
+        let id = this.props.match.params.unit;
         let traitComponentBuilder = []
-        // Builds[id].builds.forEach( (e, i) => {
-        //     itemBuildsList.push(<BuiltItem key={e.intoItem * 100 + e.withItem} with={e.withItem} into={e.intoItem} index={i}/>);
-        // });
+        
         return ({
             unitComponent: <Unit key={id} id={id}/>,
             traitComponents: traitComponentBuilder
@@ -28,7 +26,7 @@ export class UnitStats extends Component {
     render() {
         let s = this.state;
         return (
-            <div>
+            <div className="unit-stats-page">
                 <Nav />
                 {s}
             </div>

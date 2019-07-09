@@ -7,6 +7,9 @@ import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import {List, ListItem, ListSubheader, ListItemText, Collapse} from '@material-ui/core';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import ExpandLess from '@material-ui/icons/ExpandLess';
 import Link from '../DelayLink';
 import './Nav.css';
 
@@ -15,7 +18,8 @@ export class Nav extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: false
+            open: false,
+            units: false
         };
     }
     toggleDrawer = (open) => event => {
@@ -24,14 +28,22 @@ export class Nav extends Component {
         }
         this.setState({'open': open});
     };
+    toggleList = (open) => {
+        this.setState(state => ({[open]: !state[open]}));
+    }
     render() {
         return (
             <div>
-                 <AppBar position="static" className="nav" style={{
+                 <AppBar
+                    position="static"
+                    className="nav"
+                    style={{
                         backgroundColor: 'transparent',
                         boxShadow: 'none',
                         color: 'black'
-                        }}>
+                    }}
+                    margin="normal"
+                >
                     <Toolbar>
                     <IconButton
                         edge="start"
@@ -61,33 +73,63 @@ export class Nav extends Component {
                     onOpen={this.toggleDrawer(true)}
                     className="nav-drawer"
                     >
-                    <div className="nav-selection--updated">
-                        <Link delay={190} to='/items'>
-                            <div className="nav-item--link nav-item">
-                                <div className="loading-icon--text">
-                                    items
-                                </div>
-                            </div>
-                        </Link>
-                        <Link delay={190} to='/traits'>
-                            <div className="nav-trait--link nav-item">
-                                <div className="loading-icon--text">
-                                    traits
-                                </div>
-                            </div>
-                        </Link>
-                        <Link delay={190} to='/units'>
-                            <div className="nav-unit--link nav-item">
-                                <div className="loading-icon--text">
-                                    units
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
+                    <List
+                        component="nav"
+                        aria-labelledby="nested-list-subheader"
+                        subheader={
+                            <ListSubheader component="div" id="nested-list-subheader">
+                            tft.help
+                            </ListSubheader>
+                        }
+                        className="nav-list--holder"
+                        >
+                        <ListItem button onClick={() => this.toggleList('items')}>
+                            <Link delay={190} to='/items'>
+                                <ListItemText primary="Items" />
+                            </Link>
+                            {this.state.items ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+                        <Collapse in={this.state.items} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                            <ListItem button>
+                                <ListItemText primary="Starred" />
+                            </ListItem>
+                            </List>
+                        </Collapse>
+                        <ListItem button>
+                            <Link delay={190} to='/traits'>
+                                <ListItemText primary="Traits" />
+                            </Link>
+                            {this.state.traits ? <ExpandLess onClick={() => this.toggleList('traits')} /> : <ExpandMore onClick={() => this.toggleList('traits')} />}
+                        </ListItem>
+                        <Collapse in={this.state.traits} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                            <ListItem button>
+                                <ListItemText primary="Starred" />
+                            </ListItem>
+                            </List>
+                        </Collapse>
+                        <ListItem button>
+                            <Link delay={190} to='/units'>
+                                <ListItemText primary="Units" />
+                            </Link>
+                            {this.state.units ? <ExpandLess onClick={() => this.toggleList('units')} /> : <ExpandMore onClick={() => this.toggleList('units')} />}
+                        </ListItem>
+                        <Collapse in={this.state.units} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                            <ListItem button>
+                                <ListItemText primary="Starred" />
+                            </ListItem>
+                            </List>
+                        </Collapse>
+                        <div className="legal-jibber-jabber">
+                            tft.help was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
+                        </div>
+                    </List>
                 </SwipeableDrawer>
             </div>
         )
     }
 }
 
-export default Nav
+export default Nav;
