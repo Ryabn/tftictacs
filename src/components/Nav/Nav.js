@@ -78,7 +78,9 @@ export class Nav extends Component {
                         aria-labelledby="nested-list-subheader"
                         subheader={
                             <ListSubheader component="div" id="nested-list-subheader">
-                            tft.help
+                                <Link to='/' delay={0}>
+                                    tft.help
+                                </Link>
                             </ListSubheader>
                         }
                         className="nav-list--holder"
@@ -88,15 +90,12 @@ export class Nav extends Component {
                             {this.state.items ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={this.state.items} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                            <ListItem button>
-                                <Link delay={0} to='/items'>
-                                    <ListItemText primary="Items" />
-                                </Link>
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemText primary="Starred" />
-                            </ListItem>
+                            <List className="nav-list--nested" component="div" disablePadding>
+                                <ListItem button>
+                                    <Link delay={0} to='/items'>
+                                        All Items
+                                    </Link>
+                                </ListItem>
                             </List>
                         </Collapse>
 
@@ -105,28 +104,26 @@ export class Nav extends Component {
                             {this.state.traits ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={this.state.traits} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                            <ListItem button>
-                                <Link delay={0} to='/traits'>
-                                    All Traits
-                                </Link>
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemText primary="Starred" />
-                            </ListItem>
+                            <List className="nav-list--nested" component="div" disablePadding>
+                                <ListItem button>
+                                    <Link delay={0} to='/traits'>
+                                        All Traits
+                                    </Link>
+                                </ListItem>
                             </List>
                         </Collapse>
-                        <ListItem button>
-                            <Link delay={0} to='/units'>
-                                <ListItemText primary="Units" />
-                            </Link>
-                            {this.state.units ? <ExpandLess onClick={() => this.toggleList('units')} /> : <ExpandMore onClick={() => this.toggleList('units')} />}
+
+                        <ListItem button onClick={() => this.toggleList('units')} >
+                            <ListItemText primary="Units" />
+                            {this.state.units ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={this.state.units} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                            <ListItem button>
-                                <ListItemText primary="Starred" />
-                            </ListItem>
+                            <List className="nav-list--nested" component="div" disablePadding>
+                                <ListItem button>
+                                    <Link delay={0} to='/units'>
+                                        All Units
+                                    </Link>
+                                </ListItem>
                             </List>
                         </Collapse>
                         <div className="legal-jibber-jabber">

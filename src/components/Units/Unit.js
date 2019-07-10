@@ -3,6 +3,7 @@ import {Units as UnitData, Traits as TraitData} from '../../assets/UnitSets';
 import {Card, CardHeader, CardContent, CardActions, Collapse, IconButton, Typography, Table, TableBody, TableRow, TableCell} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import Link from '../DelayLink';
 import './Units.css';
 
 export class Unit extends Component {
@@ -33,7 +34,11 @@ export class Unit extends Component {
             <div className="unit-holder">
                 <Card>
                 <CardHeader
-                    avatar={<img src={s.icon} alt="Champion Avatar" className="unit-avatar"></img>}
+                    avatar={
+                        <Link to={`/units/${this.props.id}`}>
+                            <img src={s.icon} alt="Champion Avatar" className="unit-avatar"></img>
+                        </Link>
+                    }
                     title={s.name}
                     subheader={s.cost + " Gold"}
                 />
@@ -89,6 +94,10 @@ export class Unit extends Component {
                                     <TableRow>
                                         <TableCell>Health</TableCell>
                                         <TableCell align="right">{s.stats.health.join(' / ')}</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Crit %</TableCell>
+                                        <TableCell align="right">{s.stats.critChance}</TableCell>
                                     </TableRow>
                                 </TableBody>
                             </Table>

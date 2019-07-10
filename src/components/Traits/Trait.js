@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Traits as TraitData, Units as UnitData} from '../../assets/UnitSets';
 import {Card, CardHeader, CardContent, Typography} from '@material-ui/core';
+import Link from '../DelayLink';
 import './Traits.css';
 
 export class Trait extends Component {
@@ -29,7 +30,11 @@ export class Trait extends Component {
     }
     displayUnits = (s) => {
         return s.units.map( e => {
-            return <div key={e} className="trait-unit--icon" style={{backgroundImage: `url('${UnitData[e].icon}')`}}></div>;
+            return (
+                <Link to={`/units/${e}`}>
+                    <div key={e} className="trait-unit--icon" style={{backgroundImage: `url('${UnitData[e].icon}')`}}></div>
+                </Link>
+            );
         });
     }
     render() {
@@ -38,7 +43,11 @@ export class Trait extends Component {
             <div className="trait-holder">
                 <Card>
                 <CardHeader
-                    avatar={<img src={s.image} alt="Champion Avatar" style={{backgroundColor: s.color}} className="trait-avatar"></img>}
+                    avatar={ 
+                        <Link to={`/traits/${s}`}>
+                            <img src={s.image} alt="Champion Avatar" style={{backgroundColor: s.color}} className="trait-avatar"></img>
+                        </Link>
+                    }
                     title={s.name}
                     subheader={s.text}
                 />

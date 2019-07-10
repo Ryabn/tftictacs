@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import Unit from './Unit';
-import {Traits as TraitData, Units as UnitData} from '../../assets/UnitSets';
+import Trait from '../Traits/Trait';
+import {Units as UnitData} from '../../assets/UnitSets';
 import './Units.css';
 
 export class UnitStats extends Component {
@@ -16,7 +17,9 @@ export class UnitStats extends Component {
     }
     displayUnitStats = () => {
         let id = this.props.match.params.unit;
-        let traitComponentBuilder = []
+        let traitComponentBuilder = UnitData[id].origin.concat(UnitData[id].class).map(traitID => {
+            return <Trait key={traitID} id={traitID} />
+        });
         
         return ({
             unitComponent: <Unit key={id} id={id}/>,
@@ -26,9 +29,14 @@ export class UnitStats extends Component {
     render() {
         let s = this.state;
         return (
-            <div className="unit-stats-page">
+            <div className="units-page">
                 <Nav />
-                {s}
+                <div className="scrollable-list">
+                    <div className="unit-stats--holder">
+                        {s.unitComponent}
+                        {s.traitComponents}
+                    </div>
+                </div>
             </div>
         )
     }
