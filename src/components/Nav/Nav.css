@@ -10,4 +10,12 @@
 }
 .nav-list--holder{
     width: 250px;   
+    height: 100%;
+}
+.legal-jibber-jabber{
+    font-size: 11px;
+    padding: 20px;
+    text-align: justify;
+    position: absolute;
+    bottom: 0;
 }

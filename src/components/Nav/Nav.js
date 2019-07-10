@@ -84,33 +84,40 @@ export class Nav extends Component {
                         className="nav-list--holder"
                         >
                         <ListItem button onClick={() => this.toggleList('items')}>
-                            <Link delay={190} to='/items'>
-                                <ListItemText primary="Items" />
-                            </Link>
+                            <ListItemText primary="Items" />
                             {this.state.items ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={this.state.items} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
                             <ListItem button>
+                                <Link delay={0} to='/items'>
+                                    <ListItemText primary="Items" />
+                                </Link>
+                            </ListItem>
+                            <ListItem button>
                                 <ListItemText primary="Starred" />
                             </ListItem>
                             </List>
                         </Collapse>
-                        <ListItem button>
-                            <Link delay={190} to='/traits'>
-                                <ListItemText primary="Traits" />
-                            </Link>
-                            {this.state.traits ? <ExpandLess onClick={() => this.toggleList('traits')} /> : <ExpandMore onClick={() => this.toggleList('traits')} />}
+
+                        <ListItem button onClick={() => this.toggleList('traits')} >
+                            <ListItemText primary="Traits" />
+                            {this.state.traits ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={this.state.traits} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
+                            <ListItem button>
+                                <Link delay={0} to='/traits'>
+                                    All Traits
+                                </Link>
+                            </ListItem>
                             <ListItem button>
                                 <ListItemText primary="Starred" />
                             </ListItem>
                             </List>
                         </Collapse>
                         <ListItem button>
-                            <Link delay={190} to='/units'>
+                            <Link delay={0} to='/units'>
                                 <ListItemText primary="Units" />
                             </Link>
                             {this.state.units ? <ExpandLess onClick={() => this.toggleList('units')} /> : <ExpandMore onClick={() => this.toggleList('units')} />}

@@ -17,7 +17,7 @@ const theme = createMuiTheme({
             root: {
                 fontFamily: 'Quicksand'
             }   
-        },
+        }
     },
     typography: {
         useNextVariants: true,

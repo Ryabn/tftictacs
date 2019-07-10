@@ -20,8 +20,10 @@ export class Traits extends Component {
         return (
             <div className="traits-page">
                 <Nav />
-                <div className="traits-list-holder">
-                    {s.traits}
+                <div className="scrollable-list">
+                    <div className="traits-list-holder">
+                        {s.traits}
+                    </div>
                 </div>
             </div>
         )

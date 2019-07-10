@@ -1,8 +1,6 @@
 .trait-holder{
     display: grid;
     grid-template-columns: 1fr;
-    padding: 2px;
-    height: auto;
 }
 .trait-unit--holder{
     display: grid;
@@ -22,19 +20,15 @@
 .traits-page{
     /* background: linear-gradient(0deg, #36d1dc, #5b86e5);  */
     background: linear-gradient(0deg, rgba(54,209,220, 0.5), rgba(91,134,229, 0.5)); 
-    /* height: 100%; */
+    height: 100vh;
 }
 .traits-list-holder{
     display: grid;
     grid-template-columns: 1fr;
-    overflow-y: scroll;
     row-gap: 20px;
     column-gap: 20px;
     padding: 20px;
-    height: calc(100%);
     box-sizing: border-box;
-    margin: 0 auto;
-    max-width: 1000px;
 }
 .trait-bonus--table > div{
     padding-bottom: 10px;
@@ -54,14 +48,7 @@
     box-sizing: border-box;
 }
 @media (min-width: 600px){
-    .units-list-holder{
-        grid-template-columns: 1fr 1fr;
-    }
     .traits-list-holder{
         grid-template-columns: 1fr 1fr;
-    }
-    .unit-splash{
-        width: 50vw;
-        height: 22.5vw;
     }
 }

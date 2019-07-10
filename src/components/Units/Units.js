@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Units as UnitData } from '../../assets/UnitSets';
-import Unit from './Unit.js';
+import Unit from './Unit';
 import Nav from '../Nav/Nav';
 import './Units.css';
 
@@ -20,8 +20,10 @@ export class Units extends Component {
         return (
             <div className="units-page">
                 <Nav />
-                <div className="units-list-holder">
-                    {s.units}
+                <div className="scrollable-list">
+                    <div className="units-list-holder">
+                        {s.units}
+                    </div>
                 </div>
             </div>
         )
