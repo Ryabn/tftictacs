@@ -19,7 +19,7 @@ export class Traits extends Component {
         const s = this.state;
         return (
             <div className="traits-page">
-                <Nav />
+                <Nav tab={'trait'}/>
                 <div className="scrollable-list">
                     <div className="traits-list-holder">
                         {s.traits}

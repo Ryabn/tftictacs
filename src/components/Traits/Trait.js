@@ -15,15 +15,13 @@ export class Trait extends Component {
     displayBonuses = (s) => {
         return (
             <div key={s.id} className="trait-bonus--table">
-                {s.bonus.map((e, i) => {
-                    return [
-                        <div key={i}>
-                            <b>{e.count} </b>
-                        </div>,
-                        <div key={i+100} style={{textAlign: 'justify'}}>
-                            {e.text}
+                {s.bonus.map(bonus => {
+                    return( 
+                        <div key={bonus.count}>
+                            <b>[{bonus.count}] </b>
+                            {bonus.text}
                         </div>
-                    ];
+                    );
                 })}
             </div>
         )
@@ -31,8 +29,8 @@ export class Trait extends Component {
     displayUnits = (s) => {
         return s.units.map( e => {
             return (
-                <Link to={`/units/${e}`}>
-                    <div key={e} className="trait-unit--icon" style={{backgroundImage: `url('${UnitData[e].icon}')`}}></div>
+                <Link key={e} to={`/units/${e}`}>
+                    <div className="trait-unit--icon" style={{backgroundImage: `url('${UnitData[e].icon}')`}}></div>
                 </Link>
             );
         });
@@ -44,7 +42,7 @@ export class Trait extends Component {
                 <Card>
                 <CardHeader
                     avatar={ 
-                        <Link to={`/traits/${s}`}>
+                        <Link to={`/traits/${s.id}`}>
                             <img src={s.image} alt="Champion Avatar" style={{backgroundColor: s.color}} className="trait-avatar"></img>
                         </Link>
                     }

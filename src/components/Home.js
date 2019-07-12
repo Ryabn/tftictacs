@@ -4,7 +4,8 @@ import './Home.css';
 
 export class Home extends Component {
     render() {
-        return ([
+        return (
+            <div>
                 <div className="home-selection--updated">
                     <Link delay={190} to='/items'>
                         <div className="home-item--link home-item">
@@ -36,11 +37,11 @@ export class Home extends Component {
                             </div>
                         </div>
                     </Link>
-                </div>,
+                </div>
                 <div className="legal-jibber-jabber--home">
                     Note: tft.help was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
                 </div>
-            ]
+            </div>
         )
     }
 }

@@ -19,7 +19,7 @@ export class Units extends Component {
         const s = this.state;
         return (
             <div className="units-page">
-                <Nav />
+                <Nav tab={'unit'}/>
                 <div className="scrollable-list">
                     <div className="units-list-holder">
                         {s.units}

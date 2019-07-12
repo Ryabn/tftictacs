@@ -30,7 +30,7 @@ export class UnitStats extends Component {
         let s = this.state;
         return (
             <div className="units-page">
-                <Nav />
+                <Nav tab={'unit'}/>
                 <div className="scrollable-list">
                     <div className="unit-stats--holder">
                         {s.unitComponent}

@@ -7,20 +7,23 @@ import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import {List, ListItem, ListSubheader, ListItemText, Collapse} from '@material-ui/core';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import Link from '../DelayLink';
+import NavList from './NavList';
+import {withRouter} from 'react-router-dom';
 import './Nav.css';
-
 
 export class Nav extends Component {
     constructor(props){
         super(props);
         this.state = {
             open: false,
-            units: false
         };
+    }
+    componentDidUpdate = (props) => {
+        if(props.match.params !== this.props.match.params){
+            this.setState({
+                open: false
+            });
+        }
     }
     toggleDrawer = (open) => event => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -28,9 +31,6 @@ export class Nav extends Component {
         }
         this.setState({'open': open});
     };
-    toggleList = (open) => {
-        this.setState(state => ({[open]: !state[open]}));
-    }
     render() {
         return (
             <div>
@@ -56,7 +56,7 @@ export class Nav extends Component {
                     <Typography variant="h6" noWrap>
                         tft.help
                     </Typography>
-                    <div className="nav-search--holder">
+                    {/* <div className="nav-search--holder">
                         <div>
                             <SearchIcon />
                         </div>
@@ -64,7 +64,7 @@ export class Nav extends Component {
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'Search' }}
                         />
-                    </div>
+                    </div> */}
                     </Toolbar>
                 </AppBar>
                 <SwipeableDrawer
@@ -73,67 +73,11 @@ export class Nav extends Component {
                     onOpen={this.toggleDrawer(true)}
                     className="nav-drawer"
                     >
-                    <List
-                        component="nav"
-                        aria-labelledby="nested-list-subheader"
-                        subheader={
-                            <ListSubheader component="div" id="nested-list-subheader">
-                                <Link to='/' delay={0}>
-                                    tft.help
-                                </Link>
-                            </ListSubheader>
-                        }
-                        className="nav-list--holder"
-                        >
-                        <ListItem button onClick={() => this.toggleList('items')}>
-                            <ListItemText primary="Items" />
-                            {this.state.items ? <ExpandLess /> : <ExpandMore />}
-                        </ListItem>
-                        <Collapse in={this.state.items} timeout="auto" unmountOnExit>
-                            <List className="nav-list--nested" component="div" disablePadding>
-                                <ListItem button>
-                                    <Link delay={0} to='/items'>
-                                        All Items
-                                    </Link>
-                                </ListItem>
-                            </List>
-                        </Collapse>
-
-                        <ListItem button onClick={() => this.toggleList('traits')} >
-                            <ListItemText primary="Traits" />
-                            {this.state.traits ? <ExpandLess /> : <ExpandMore />}
-                        </ListItem>
-                        <Collapse in={this.state.traits} timeout="auto" unmountOnExit>
-                            <List className="nav-list--nested" component="div" disablePadding>
-                                <ListItem button>
-                                    <Link delay={0} to='/traits'>
-                                        All Traits
-                                    </Link>
-                                </ListItem>
-                            </List>
-                        </Collapse>
-
-                        <ListItem button onClick={() => this.toggleList('units')} >
-                            <ListItemText primary="Units" />
-                            {this.state.units ? <ExpandLess /> : <ExpandMore />}
-                        </ListItem>
-                        <Collapse in={this.state.units} timeout="auto" unmountOnExit>
-                            <List className="nav-list--nested" component="div" disablePadding>
-                                <ListItem button>
-                                    <Link delay={0} to='/units'>
-                                        All Units
-                                    </Link>
-                                </ListItem>
-                            </List>
-                        </Collapse>
-                        <div className="legal-jibber-jabber">
-                            tft.help was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
-                        </div>
-                    </List>
+                    <NavList tab={this.props.tab}/>
                 </SwipeableDrawer>
             </div>
         )
     }
 }
 
-export default Nav;
+export default withRouter(Nav);
