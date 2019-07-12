@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {List, ListItem, ListSubheader, ListItemText, Collapse} from '@material-ui/core';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandLess from '@material-ui/icons/ExpandLess';
-import {SortByName} from '../../assets/UnitSetsSorted';
+import { USortByName, TSortByName } from '../../assets/SortedSets';
 import Link from '../DelayLink';
 import './Nav.css';
 
@@ -51,11 +51,22 @@ export class NavList extends Component {
         }
     }
     getListUnits = () => {
-        return SortByName.map(unit => {
+        return USortByName.map(unit => {
             return (
                 <Link key={unit.id} to={`/units/${unit.id}`}>
                     <ListItem button>
                         <span style={{fontSize: '30px', color: this.getCostColor(unit.cost)}}> • </span>&#160;&#160;{unit.name}
+                    </ListItem>
+                </Link>
+            );
+        });
+    }
+    getListTraits = () => {
+        return TSortByName.map(trait => {
+            return (
+                <Link key={trait.id} to={`/traits/${trait.id}`}>
+                    <ListItem button>
+                        <span style={{fontSize: '30px', color: trait.color}}> • </span>&#160;&#160;{trait.name}
                     </ListItem>
                 </Link>
             );
@@ -101,6 +112,7 @@ export class NavList extends Component {
                                 All Traits
                             </ListItem>
                         </Link>
+                        {this.getListTraits()}
                     </List>
                 </Collapse>
 
