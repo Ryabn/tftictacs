@@ -53,7 +53,7 @@ export class NavList extends Component {
     getListItems = () => {
         return ISortByName.map(item => {
             return (
-                <Link key={item.id} to={`/item/${item.id}`}>
+                <Link key={item.id} to={`/items/${item.id}`}>
                     <ListItem button>
                         {item.name}
                     </ListItem>

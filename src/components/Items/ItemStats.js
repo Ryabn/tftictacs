@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {Items, Builds} from '../../assets/ItemSets';
 import BuiltItem from './BuiltItem';
+import Nav from '../Nav/Nav';
 import './Items.css';
 
 export class ItemStats extends Component {
@@ -31,6 +32,7 @@ export class ItemStats extends Component {
         const s = this.state;
         return (
             <div className="item-stats--holder">
+                <Nav />
                 <div className="built-item--holder">
                     <Link to='/items' className="back-button"> back </Link>
                     <div className="item-component--holder" style={{backgroundColor: '#dcdcdc'}}>

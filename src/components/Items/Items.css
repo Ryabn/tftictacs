@@ -3,7 +3,7 @@ a {
     color: black;
 }
 .base-item--holder{
-    background: linear-gradient(45deg, rgba(127,0,255, 0.4), rgba(225,0,255, 0.4));
+    /* background: linear-gradient(45deg, rgba(127,0,255, 0.4), rgba(225,0,255, 0.4)); */
     height: 100%;
     width: 100%;
     padding: 28px 30px 13px 30px;

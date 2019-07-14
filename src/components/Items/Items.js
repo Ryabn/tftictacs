@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BaseItems } from '../../assets/ItemSets';
 import { Link } from 'react-router-dom';
 import Item from './Item';
+import Nav from '../Nav/Nav';
 import './Items.css';
 
 export class Items extends Component {
