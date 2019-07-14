@@ -15,7 +15,8 @@
     overflow-x: hidden;
 }
 .nav-list--nested{
-    margin-left: 10px;
+    padding-left: 10px !important;
+    font-size: 15px;
 }
 .legal-jibber-jabber{
     margin-top: 50px;

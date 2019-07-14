@@ -17,6 +17,12 @@ const theme = createMuiTheme({
             root: {
                 fontFamily: 'Quicksand'
             }   
+        },
+        MuiCardHeader: {
+            title: {
+                fontWeight: 'bold',
+                fontSize: '20px'
+            }
         }
     },
     typography: {

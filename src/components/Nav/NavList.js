@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {List, ListItem, ListSubheader, ListItemText, Collapse} from '@material-ui/core';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandLess from '@material-ui/icons/ExpandLess';
-import { USortByName, TSortByName } from '../../assets/SortedSets';
+import { USortByName, TSortByName, ISortByName } from '../../assets/SortedSets';
 import Link from '../DelayLink';
 import './Nav.css';
 
@@ -50,6 +50,17 @@ export class NavList extends Component {
                 return 'white';
         }
     }
+    getListItems = () => {
+        return ISortByName.map(item => {
+            return (
+                <Link key={item.id} to={`/item/${item.id}`}>
+                    <ListItem button>
+                        {item.name}
+                    </ListItem>
+                </Link>
+            );
+        });
+    }
     getListUnits = () => {
         return USortByName.map(unit => {
             return (
@@ -81,7 +92,7 @@ export class NavList extends Component {
                 subheader={
                     <Link to='/' delay={0}>
                         <ListSubheader component="div" style={{background: s.color}} id="nested-list-subheader">
-                                for dev only
+                            tft.help
                         </ListSubheader>
                     </Link>
                 }
@@ -98,6 +109,7 @@ export class NavList extends Component {
                                     All Items
                             </ListItem>
                         </Link>
+                        {this.getListItems()}
                     </List>
                 </Collapse>
 

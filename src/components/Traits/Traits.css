@@ -30,7 +30,7 @@
     box-sizing: border-box;
 }
 .trait-bonus--table > div{
-    padding-bottom: 10px;
+    padding: 0 10px 10px 10px;
     border-bottom: 1px solid rgb(156, 156, 156);
 }
 .trait-bonus--table{

@@ -43,7 +43,7 @@ export class Trait extends Component {
                 <CardHeader
                     avatar={ 
                         <Link to={`/traits/${s.id}`}>
-                            <img src={s.image} alt="Champion Avatar" style={{backgroundColor: s.color}} className="trait-avatar"></img>
+                            <img src={s.image} alt="Trait Avatar" style={{backgroundColor: s.color}} className="trait-avatar"></img>
                         </Link>
                     }
                     title={s.name}

@@ -21,18 +21,26 @@ export class Unit extends Component {
         }));
     }
     getTraits = (s) => {
-        return <i> { s.origin.map( e => {
-            return TraitData[e].name;
-        }).join(' / ') + ' / ' + s.class.map( e => {
-            return TraitData[e].name;
-        }).join(' / ')}</i>;
-
+        return (
+            <div className="unit-trait--holder">
+            {s.origin.map(this.getTraitComponent).concat(s.class.map(this.getTraitComponent))}
+            </div>
+        );
+    }
+    getTraitComponent = (e) => {
+        return (
+            <Link key={e} to={`/traits/${e}`}>
+                <img src={TraitData[e].image} alt="Trait Avatar" style={{backgroundColor: TraitData[e].color}} className="trait-avatar--mini"></img>
+                {/* {TraitData[e].name} • */}
+            </Link>
+        );
     }
     render() {
         const s = this.state;
         return (
             <div className="unit-holder">
-                <Card>
+                <Card style={{position: 'relative'}}>
+                {this.getTraits(s)}
                 <CardHeader
                     avatar={
                         <Link to={`/units/${this.props.id}`}>
@@ -42,9 +50,9 @@ export class Unit extends Component {
                     title={s.name}
                     subheader={s.cost + " Gold"}
                 />
-                <CardContent style={{padding: '10px 0 0 16px'}}>
+                <CardContent style={{padding: '0px 0 5px 16px'}}>
                     <Typography variant="body2" color="textSecondary" component="div">
-                        {this.getTraits(s)}
+                        <i>{s.origin.map(e => {return TraitData[e].name}).concat(s.class.map(e => {return TraitData[e].name})).join(' | ')}</i>
                     </Typography>
                 </CardContent>
                 <CardContent style={{padding: '10px 16px 0 16px', textAlign: 'justify'}}>

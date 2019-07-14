@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import {AppBar, Toolbar, SwipeableDrawer, Breadcrumbs} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
+// import InputBase from '@material-ui/core/InputBase';
+// import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import NavList from './NavList';
+import Link from '../DelayLink';
+import {Units as unitsData, Traits as traitsData} from '../../assets/UnitSets';
+// import {} from '../../assets/ItemSets';
 import {withRouter} from 'react-router-dom';
 import './Nav.css';
 
@@ -24,6 +25,16 @@ export class Nav extends Component {
                 open: false
             });
         }
+    }
+    getCurrentDirectory = () => {
+        let urlPath = this.props.match.url.split('/');
+        urlPath[1] = urlPath[1].charAt(0).toUpperCase() + urlPath[1].slice(1);
+        let breadcrumb = [<Link key={1} to={'/' + urlPath[1]}>{urlPath[1]}</Link>];
+        let letter = parseInt(urlPath[2]);
+        if(!isNaN(letter)){
+            breadcrumb.push( <Typography key={2}> {letter} </Typography> )
+        }
+        return breadcrumb;
     }
     toggleDrawer = (open) => event => {
         if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -54,7 +65,12 @@ export class Nav extends Component {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        tft.help
+                    <Breadcrumbs separator="›" aria-label="Breadcrumb">
+                        <Link to="/">
+                            Home
+                        </Link>
+                        {this.getCurrentDirectory()}
+                    </Breadcrumbs>
                     </Typography>
                     {/* <div className="nav-search--holder">
                         <div>
