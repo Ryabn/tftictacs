@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Items, Decompositions} from '../../assets/ItemSets';
+import {Compositions, Decompositions} from '../../assets/ItemSets';
 import BuiltItem from './BuiltItem';
+import Item from './Item';
 import Nav from '../Nav/Nav';
 import './Items.css';
 
@@ -19,7 +20,7 @@ export class ItemStats extends Component {
         return id < 8 ? this.displayItemPaths(id) : this.displayBuiltItem(id);
     }
     displayItemPaths = (id) => {
-        let itemBuildsList = [];
+        let itemBuildsList = [<Item key={id} id={id}/>];
         Decompositions[id].forEach( e => {
             itemBuildsList.push(<BuiltItem key={e} id={e}/>);
         });
@@ -28,8 +29,12 @@ export class ItemStats extends Component {
         });
     }
     displayBuiltItem = (id) => {
+        let itemBuildsList = [<BuiltItem key={id} id={id}/>];
+        Compositions[id].forEach( e => {
+            itemBuildsList.push(<Item key={e} id={e}/>);
+        });
         return ({
-            builds: []
+            builds: itemBuildsList
         });
     }
 
