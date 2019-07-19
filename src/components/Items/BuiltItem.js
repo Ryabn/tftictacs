@@ -17,9 +17,6 @@ export class BuiltItem extends Component {
             buildPathAvatar: this.getBuildItems(id)
         };
     }
-    alternateColor = (index) => {
-        return { backgroundColor: index % 2 ? '#f5f5f5' : '#ebebeb' };
-    }
     getBuildPath = (id) => {
         return (
             <div className="built-item--path">
@@ -49,17 +46,16 @@ export class BuiltItem extends Component {
     render() {
         const s = this.state;
         return (
-            <Link to={'/items/' + this.props.id} className="item-component--holder">
+            <div className="item-component--holder">
                 <Card style={{position: 'relative'}}>
                 {s.buildPathAvatar}
                 <CardHeader
                     avatar={ 
-                        <img src={s.image} alt="Item Avatar" className="item-avatar"></img>
+                        <Link to={'/items/' + this.props.id}>
+                            <img src={s.image} alt="Item Avatar" className="item-avatar"></img>
+                        </Link>
                     }
                     title={s.name}
-                    style={{
-                        paddingLeft: '20px'
-                    }}
                     subheader={s.buildPath}
                 />
                 <CardContent style={{padding: '10px 16px 16px 16px', textAlign: 'justify'}}>
@@ -68,7 +64,7 @@ export class BuiltItem extends Component {
                     </Typography>
                 </CardContent>
                 </Card>
-            </Link>    
+            </div>    
         )
     }
 }

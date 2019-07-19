@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import {Items, Builds} from '../../assets/ItemSets';
+import {Items, Decompositions} from '../../assets/ItemSets';
 import BuiltItem from './BuiltItem';
 import Nav from '../Nav/Nav';
 import './Items.css';
@@ -17,24 +16,30 @@ export class ItemStats extends Component {
     }
     displayItemStats = () => {
         let id = this.props.match.params.item;
+        return id < 8 ? this.displayItemPaths(id) : this.displayBuiltItem(id);
+    }
+    displayItemPaths = (id) => {
         let itemBuildsList = [];
-        Builds[id].builds.forEach( (e, i) => {
-            itemBuildsList.push(<BuiltItem key={e.intoItem * 100 + e.withItem} with={e.withItem} into={e.intoItem} index={i}/>);
+        Decompositions[id].forEach( e => {
+            itemBuildsList.push(<BuiltItem key={e} id={e}/>);
         });
         return ({
-            name: Items[id].name,
-            stat: Items[id].stat,
-            image: Items[id].image,
             builds: itemBuildsList
         });
     }
+    displayBuiltItem = (id) => {
+        return ({
+            builds: []
+        });
+    }
+
     render() {
         let s = this.state;
         return (
             <div className="items-page">
                 <Nav tab={'item'}/>
                 <div className="scrollable-list">
-                    <div className="items-stats--holder">
+                    <div className="item-stats--holder">
                         {s.builds}
                     </div>
                 </div>

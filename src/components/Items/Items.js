@@ -10,12 +10,8 @@ export class Items extends Component {
         super(props);
         let itemComponents = [];
         for(let i = 0; i < TotalItems; i++){
-            itemComponents.push( 
-                i < 8 
-                ? <Item key={i} id={i} index={i}/ >
-                : <BuiltItem key={i} id={i} index={i} />
-            );
-        };
+            itemComponents.push(i < 8 ? <Item key={i} id={i}/ > : <BuiltItem key={i} id={i}/> );
+        }
         this.state = {
             items: itemComponents
         };

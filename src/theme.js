@@ -22,6 +22,10 @@ const theme = createMuiTheme({
             title: {
                 fontWeight: 'bold',
                 fontSize: '20px'
+            },
+            content: {
+                paddingRight: '50px',
+                boxSizing: 'border-box'
             }
         },
         MuiAppBar: {

@@ -23,6 +23,7 @@ a {
 .item-component--holder{
     height: 100%;
     width: 100%;
+    margin-bottom: 20px;
 }
 .built-item-path--holder{
     position: absolute;
@@ -41,6 +42,12 @@ a {
 }
 .build-item--path{
     padding-left: 20px !important;
+}
+.item-stats--holder{
+    display: grid;
+    grid-template-columns: calc( 100vw - 40px );
+    grid-auto-rows: auto;
+    padding: 20px;
 }
 @media (min-width: 1000px){
     .items-list--holder{

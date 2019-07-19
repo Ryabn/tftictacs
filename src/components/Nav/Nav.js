@@ -7,8 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 import NavList from './NavList';
 import Link from '../DelayLink';
-import {Units as unitsData, Traits as traitsData} from '../../assets/UnitSets';
-// import {} from '../../assets/ItemSets';
+// import {Units as unitsData, Traits as traitsData} from '../../assets/UnitSets';
 import {withRouter} from 'react-router-dom';
 import './Nav.css';
 

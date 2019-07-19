@@ -267,312 +267,312 @@ let items = [
 ];
 
 
-let builds = [
-    {
-        name: `Giant's Belt`,
-        index: 0,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 14,
-            },
-            {
-                withItem: 1,
-                intoItem: 34,
-            },
-            {
-                withItem: 2,
-                intoItem: 31,
-            },
-            {
-                withItem: 3,
-                intoItem: 29,
-            },
-            {
-                withItem: 4,
-                intoItem: 33,
-            },
-            {
-                withItem: 5,
-                intoItem: 26,
-            },
-            {
-                withItem: 6,
-                intoItem: 19,
-            },
-            {
-                withItem: 7,
-                intoItem: 35,
-            }
-        ]
-    },
-    {
-        name: 'chainvest',
-        index: 1,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 34,
-            },
-            {
-                withItem: 1,
-                intoItem: 13,
-            },
-            {
-                withItem: 2,
-                intoItem: 8,
-            },
-            {
-                withItem: 3,
-                intoItem: 11,
-            },
-            {
-                withItem: 4,
-                intoItem: 36,
-            },
-            {
-                withItem: 5,
-                intoItem: 27,
-            },
-            {
-                withItem: 6,
-                intoItem: 21,
-            },
-            {
-                withItem: 7,
-                intoItem: 20,
-            }
-        ]
-    },
-    {
-        name: 'bfsword',
-        index: 2,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 31,
-            },
-            {
-                withItem: 1,
-                intoItem: 8,
-            },
-            {
-                withItem: 2,
-                intoItem: 9,
-            },
-            {
-                withItem: 3,
-                intoItem: 30,
-            },
-            {
-                withItem: 4,
-                intoItem: 12,
-            },
-            {
-                withItem: 5,
-                intoItem: 24,
-            },
-            {
-                withItem: 6,
-                intoItem: 32,
-            },
-            {
-                withItem: 7,
-                intoItem: 23,
-            }
-        ]
-    },
-    {
-        name: 'recurvebow',
-        index: 3,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 29,
-            },
-            {
-                withItem: 1,
-                intoItem: 11,
-            },
-            {
-                withItem: 2,
-                intoItem: 30,
-            },
-            {
-                withItem: 3,
-                intoItem: 18,
-            },
-            {
-                withItem: 4,
-                intoItem: 37,
-            },
-            {
-                withItem: 5,
-                intoItem: 22,
-            },
-            {
-                withItem: 6,
-                intoItem: 16,
-            },
-            {
-                withItem: 7,
-                intoItem: 25,
-            }
-        ]
-    },
-    {
-        name: 'negatroncloak',
-        index: 4,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 33,
-            },
-            {
-                withItem: 1,
-                intoItem: 36,
-            },
-            {
-                withItem: 2,
-                intoItem: 12,
-            },
-            {
-                withItem: 3,
-                intoItem: 37,
-            },
-            {
-                withItem: 4,
-                intoItem: 43,
-            },
-            {
-                withItem: 5,
-                intoItem: 38,
-            },
-            {
-                withItem: 6,
-                intoItem: 39,
-            },
-            {
-                withItem: 7,
-                intoItem: 15,
-            }
-        ]
-    },
-    {
-        name: 'rod',
-        index: 5,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 26,
-            },
-            {
-                withItem: 1,
-                intoItem: 27,
-            },
-            {
-                withItem: 2,
-                intoItem: 24,
-            },
-            {
-                withItem: 3,
-                intoItem: 22,
-            },
-            {
-                withItem: 4,
-                intoItem: 38,
-            },
-            {
-                withItem: 5,
-                intoItem: 17,
-            },
-            {
-                withItem: 6,
-                intoItem: 28,
-            },
-            {
-                withItem: 7,
-                intoItem: 40,
-            }
-        ]
-    },
-    {
-        name: 'tear',
-        index: 6,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 19,
-            },
-            {
-                withItem: 1,
-                intoItem: 21,
-            },
-            {
-                withItem: 2,
-                intoItem: 32,
-            },
-            {
-                withItem: 3,
-                intoItem: 16,
-            },
-            {
-                withItem: 4,
-                intoItem: 39,
-            },
-            {
-                withItem: 5,
-                intoItem: 28,
-            },
-            {
-                withItem: 6,
-                intoItem: 10,
-            },
-            {
-                withItem: 7,
-                intoItem: 41,
-            }
-        ]
-    },
-    {
-        name: 'spatula',
-        index: 7,
-        builds: [
-            {
-                withItem: 0,
-                intoItem: 35,
-            },
-            {
-                withItem: 1,
-                intoItem: 20,
-            },
-            {
-                withItem: 2,
-                intoItem: 23,
-            },
-            {
-                withItem: 3,
-                intoItem: 25,
-            },
-            {
-                withItem: 4,
-                intoItem: 15,
-            },
-            {
-                withItem: 5,
-                intoItem: 40,
-            },
-            {
-                withItem: 6,
-                intoItem: 41,
-            },
-            {
-                withItem: 7,
-                intoItem: 42,
-            }
-        ]
-    },
-];
+// let builds = [
+//     {
+//         name: `Giant's Belt`,
+//         index: 0,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 14,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 34,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 31,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 29,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 33,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 26,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 19,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 35,
+//             }
+//         ]
+//     },
+//     {
+//         name: 'chainvest',
+//         index: 1,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 34,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 13,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 8,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 11,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 36,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 27,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 21,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 20,
+//             }
+//         ]
+//     },
+//     {
+//         name: 'bfsword',
+//         index: 2,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 31,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 8,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 9,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 30,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 12,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 24,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 32,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 23,
+//             }
+//         ]
+//     },
+//     {
+//         name: 'recurvebow',
+//         index: 3,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 29,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 11,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 30,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 18,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 37,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 22,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 16,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 25,
+//             }
+//         ]
+//     },
+//     {
+//         name: 'negatroncloak',
+//         index: 4,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 33,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 36,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 12,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 37,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 43,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 38,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 39,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 15,
+//             }
+//         ]
+//     },
+//     {
+//         name: 'rod',
+//         index: 5,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 26,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 27,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 24,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 22,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 38,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 17,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 28,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 40,
+//             }
+//         ]
+//     },
+//     {
+//         name: 'tear',
+//         index: 6,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 19,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 21,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 32,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 16,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 39,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 28,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 10,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 41,
+//             }
+//         ]
+//     },
+//     {
+//         name: 'spatula',
+//         index: 7,
+//         builds: [
+//             {
+//                 withItem: 0,
+//                 intoItem: 35,
+//             },
+//             {
+//                 withItem: 1,
+//                 intoItem: 20,
+//             },
+//             {
+//                 withItem: 2,
+//                 intoItem: 23,
+//             },
+//             {
+//                 withItem: 3,
+//                 intoItem: 25,
+//             },
+//             {
+//                 withItem: 4,
+//                 intoItem: 15,
+//             },
+//             {
+//                 withItem: 5,
+//                 intoItem: 40,
+//             },
+//             {
+//                 withItem: 6,
+//                 intoItem: 41,
+//             },
+//             {
+//                 withItem: 7,
+//                 intoItem: 42,
+//             }
+//         ]
+//     },
+// ];
 let compositions = {
     8 : [ 1, 2 ],
     9 : [ 2, 2 ],
@@ -612,8 +612,25 @@ let compositions = {
     43 : [ 4, 4 ]
 };
 
+let decompositions = [
+    [ 14, 34, 31, 29, 33, 26, 19, 35 ],
+    [ 34, 13,  8, 11, 36, 27, 21, 20 ],
+    [ 31,  8,  9, 30, 12, 24, 32, 23 ],
+    [ 29, 11, 30, 18, 37, 22, 16, 25 ],
+    [ 33, 36, 12, 37, 43, 38, 39, 15 ],
+    [ 26, 27, 24, 22, 38, 17, 28, 40 ],
+    [ 26, 27, 24, 22, 38, 17, 28, 40 ],
+    [ 19, 21, 32, 16, 39, 28, 10, 41 ],
+    [ 35, 20, 23, 25, 15, 40, 41, 42 ]
+]
+
+let itemStats = {
+
+}
+
 export const Items = items;
-export const Builds = builds;
+// export const Builds = builds;
 export const Compositions = compositions;
+export const Decompositions = decompositions;
 export const BaseItems = items.slice(0, 8);
 export const TotalItems = items.length;
