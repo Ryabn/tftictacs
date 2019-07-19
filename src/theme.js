@@ -23,6 +23,23 @@ const theme = createMuiTheme({
                 fontWeight: 'bold',
                 fontSize: '20px'
             }
+        },
+        MuiAppBar: {
+            root: {
+                fontFamily: 'Quicksand'
+            },
+        },
+        MuiBreadcrumbs: {
+            root: {
+                fontFamily: 'Quicksand',
+                fontWeight: 'bold'
+            }
+        },
+        MuiListSubheader: {
+            root: {
+                fontFamily: 'Quicksand',
+                color: 'white'
+            }
         }
     },
     typography: {

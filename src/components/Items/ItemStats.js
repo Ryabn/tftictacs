@@ -29,18 +29,14 @@ export class ItemStats extends Component {
         });
     }
     render() {
-        const s = this.state;
+        let s = this.state;
         return (
-            <div className="item-stats--holder">
-                <Nav />
-                <div className="built-item--holder">
-                    <Link to='/items' className="back-button"> back </Link>
-                    <div className="item-component--holder" style={{backgroundColor: '#dcdcdc'}}>
-                        <img src={s.image} alt={s.name + " image"} />
-                        <div className="item-component--name">{ s.name }</div>
-                        <div className="item-component--stat">{ s.stat }</div>
+            <div className="items-page">
+                <Nav tab={'item'}/>
+                <div className="scrollable-list">
+                    <div className="items-stats--holder">
+                        {s.builds}
                     </div>
-                    {s.builds}
                 </div>
             </div>
         )

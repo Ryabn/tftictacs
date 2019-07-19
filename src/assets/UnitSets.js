@@ -146,7 +146,7 @@ const classes = [
         bonus: [
             {
                 count: 3,
-                text: '+100% max health'
+                text: '+60% max health'
             }
         ],
         units: [ 6, 14, 34, 41, 49 ]
@@ -179,15 +179,15 @@ const origins = [
         color: '#8D4269',
         bonus: [{
                 count: 2,
-                text: '+40% change on hit to Mana Burn'
+                text: '+25% chance on hit to Mana Burn'
             },
             {
                 count: 4,
-                text: '+60% change on hit to Mana Burn'
+                text: '+50% chance on hit to Mana Burn'
             },
             {
                 count: 6,
-                text: '+80% change on hit to Mana Burn'
+                text: '+85% chance on hit to Mana Burn'
             }
         ],
         units: [ 14, 22, 24, 27, 31, 39, 49 ]
@@ -338,7 +338,7 @@ const origins = [
     },
     {
         name: 'Wild',
-        text: 'Attacks generate stacks of Fury (up to 5). Each stack of Fury grants 7% Attack Speed.',
+        text: 'Attacks generate stacks of Fury (up to 5). Each stack of Fury grants 8% Attack Speed.',
         image: `${traitIconLink}wild.png`,
         id: 20,
         color: '#51B241',
@@ -398,15 +398,17 @@ const units = [{
         cost: 1,
         origin: [ 16 ],
         class: [ 1 ],
-        ability: 'Becomes immune to damage and spells for 1.5s, and then stuns for 1.5s and deals [ 100 / 175 / 250 ] magic damage to the closest enemy.',
+        ability: 'Becomes immune to damage and spells for 1.5s, and then stuns for 1.5s and deals [ 100 / 250 / 400 ] magic damage to the closest enemy.',
         stats: {
             dps: [ 28, 50, 101 ],
-            as: 0.7,
+            as: 1,
             damage: [ 40, 72, 144 ],
             range: 1,
             armor: 25,
             mr: 20,
             health: [ 400, 720, 1440 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -427,11 +429,10 @@ const units = [{
             armor: 35,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
-        },
-        notes: [
-            'Morellonomicon procs on every tick of Garen\'s spin dealing up to 22.5% of a unit\'s max health'
-        ]
+        }
     },
     {
         name: 'Graves',
@@ -449,7 +450,9 @@ const units = [{
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 500, 900, 1800 ],
+            health: [ 450, 850, 1750 ],
+            startingMana: 0,
+            manaCost: 0,
             critChance: 25
         }
     },
@@ -470,6 +473,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 550, 990, 1980 ],
+            startingMana: 0,
+            manaCost: 0,
             critChance: 25
         }
     },
@@ -490,6 +495,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 500, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 50,
             critChance: 25
         }
     },
@@ -510,6 +517,8 @@ const units = [{
             armor: 35,
             mr: 20,
             health: [ 500, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -521,7 +530,7 @@ const units = [{
         cost: 1,
         origin: [ 20 ],
         class: [ 8 ],
-        ability: 'After a .5s delay, heals herself and the weakest ally for [ 150 / 375 / 600 ] over 6 seconds, then transforms into a melee attacker, gaining [ 20 / 70 / 120 ] attack damage.',
+        ability: 'After a 0.5s delay, heals herself and the weakest ally for [ 150 / 375 / 600 ] over 6 seconds, then transforms into a melee attacker, gaining [ 20 / 70 / 120 ] attack damage.',
         stats: {
             dps: [ 33, 59, 117 ],
             as: 0.65,
@@ -530,6 +539,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 500, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -550,6 +561,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 500, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 50,
             critChance: 25
         }
     },
@@ -564,12 +577,14 @@ const units = [{
         ability: '(Passive) Every third attack against the same target deals [ 8% / 10% / 12% ] percent of the target’s maximum health as bonus true damage.',
         stats: {
             dps: [ 27, 49, 97 ],
-            as: 0.6,
+            as: 0.65,
             damage: [ 45, 81, 162 ],
             range: 3,
             armor: 25,
             mr: 20,
             health: [ 550, 990, 1980 ],
+            startingMana: 0,
+            manaCost: 0,
             critChance: 25
         },
         notes: [
@@ -593,6 +608,8 @@ const units = [{
             armor: 30,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 50,
+            manaCost: 150,
             critChance: 25
         },
     },
@@ -613,6 +630,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         },
     },
@@ -633,6 +652,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 450, 810, 1620 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         },
     },
@@ -643,7 +664,7 @@ const units = [{
         splash: `${unitSplashLink}blitzcrank.png`,
         cost: 2,
         origin: [ 14 ],
-        class: [2],
+        class: [ 2 ],
         ability: 'Pulls the farthest enemy into melee range, stunning them for 2.5s, dealing [ 100 / 450 / 800 ] magic damage, and knocks them up.',
         stats: {
             dps: [ 25, 45, 90 ],
@@ -653,6 +674,8 @@ const units = [{
             armor: 35,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 0,
+            manaCost: 150,
             critChance: 25
         },
     },
@@ -664,7 +687,7 @@ const units = [{
         cost: 2,
         origin: [ 13 ],
         class: [ 4 ],
-        ability: 'Raises a barrier for 4 seconds that redirects all incoming damage to Braum, and reduces damage he takes through the shield by [ 60 / 75 / 90 ].',
+        ability: 'Raises a barrier for 4 seconds that redirects all incoming damage to Braum, and reduces damage he takes through the shield by [ 70 / 80 / 90 ].',
         stats: {
             dps: [ 24, 43, 86 ],
             as: 0.6,
@@ -673,6 +696,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 750, 1350, 2700 ],
+            startingMana: 0,
+            manaCost: 50,
             critChance: 25
         }
     },
@@ -681,10 +706,10 @@ const units = [{
         id: 14,
         icon: `${unitIconLink}Elise.png`,
         splash: `${unitSplashLink}elise.png`,
-        cost: 2,
+        cost: 1,
         origin: [ 10 ],
         class: [ 8 ],
-        ability: 'Summons [ 2 / 3 / 4 ] Spiderlings with 500 health each and transforms into a spider for 60 seconds, gaining [ 60% / 90% / 120% ] life steal. ',
+        ability: 'Summons [ 1 / 2 / 4 ] Spiderlings with 450 health each and transforms into a spider for 60 seconds, gaining [ 60% / 90% / 120% ] life steal.',
         stats: {
             dps: [ 24, 43, 86 ],
             as: 0.6,
@@ -692,7 +717,9 @@ const units = [{
             range: 2,
             armor: 25,
             mr: 20,
-            health: [ 500, 900, 1800 ],
+            health: [ 450, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -713,6 +740,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 450, 810, 1620 ],
+            startingMana: 0,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -724,7 +753,7 @@ const units = [{
         cost: 2,
         origin: [ 16 ],
         class: [ 5 ],
-        ability: 'Dashes away from nearby enemies and then attacks twice on his next attack. The first attack deals physical damage while the second deals magic damage.',
+        ability: 'Dashes away from nearby enemies and then attacks twice on his next attack. The first attack deals physical damage while the second deals [ 150 / 250 / 350 ] magic damage.',
         stats: {
             dps: [ 42, 76, 152 ],
             as: 0.65,
@@ -733,6 +762,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 0,
+            manaCost: 35,
             critChance: 25
         }
     },
@@ -753,6 +784,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 500, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -763,7 +796,7 @@ const units = [{
         splash: `${unitSplashLink}pyke.png`,
         cost: 2,
         origin: [ 18 ],
-        class: [0],
+        class: [ 0 ],
         ability: 'Dashes behind the furthest enemy, creating and afterimage that, after 1s, deals [ 150 / 200 / 250 ] magic damage and stuns all enemies it passes through for [ 2 / 2.5 / 3 ] seconds. Pyke starts with 50 mana',
         stats: {
             dps: [ 36, 65, 130 ],
@@ -773,6 +806,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 50,
+            manaCost: 125,
             critChance: 25
         }
     },
@@ -784,7 +819,7 @@ const units = [{
         cost: 2,
         origin: [ 21 ],
         class: [2],
-        ability: 'Burrows into the ground, becoming untargetable for 2 seconds while healing each .5s for 300/400/500 health in total. She then unburrows, dealing [ 150 / 200 / 250 ] magic damage and knocking up the closest enemy for 1s.',
+        ability: 'Burrows into the ground, becoming untargetable for 1 second while healing each 0.5s for 300/400/500 health in total. She then unburrows, dealing [ 150 / 200 / 350 ] magic damage and knocking up the closest enemy for 1.75s.',
         stats: {
             dps: [ 26, 47, 94 ],
             as: 0.65,
@@ -793,6 +828,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 650, 1170, 2340 ],
+            startingMana: 0,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -804,7 +841,7 @@ const units = [{
         cost: 2,
         origin: [ 17 ],
         class: [1],
-        ability: 'Creates a zone around himself allowing allies inside to dodge all attacks for [ 3 / 4 / 5 ] seconds. Shen starts with 50 mana.',
+        ability: 'Creates a zone around himself allowing allies inside to dodge all attacks for [ 3 / 4 / 5 ] seconds. Shen starts with 100 mana.',
         stats: {
             dps: [ 39, 70, 140 ],
             as: 0.6,
@@ -813,6 +850,8 @@ const units = [{
             armor: 30,
             mr: 20,
             health: [ 650, 1170, 2340 ],
+            startingMana: 100,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -826,13 +865,15 @@ const units = [{
         class: [ 9 ],
         ability: 'Twisted Fate throws a card that either stuns for [ 2 / 3 / 4 ] seconds, [ 200 / 300 / 400 ] deals damage around his target, or restores [ 20 / 35 / 50 ] mana to himself and nearby allies',
         stats: {
-            dps: [30, 54, 108],
+            dps: [ 30, 54, 108 ],
             as: 0.75,
-            damage: [40, 72, 144],
+            damage: [ 40, 72, 144 ],
             range: 3,
             armor: 20,
             mr: 20,
             health: [ 450, 810, 1620 ],
+            startingMana: 0,
+            manaCost: 50,
             critChance: 25
         }
     },
@@ -853,6 +894,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 500, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -872,7 +915,9 @@ const units = [{
             range: 1,
             armor: 25,
             mr: 20,
-            health: [500, 900, 1800],
+            health: [ 500, 900, 1800 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -884,15 +929,17 @@ const units = [{
         cost: 3,
         origin: [ 10 ],
         class: [1],
-        ability: 'Deals [ 350 / 600 / 850 ] magic damage to all enemies in a circle.',
+        ability: 'Deals [ 400 / 700 / 1000 ] magic damage to all enemies in a circle.',
         stats: {
             dps: [42, 76, 152],
             as: 0.65,
-            damage: [65, 117, 234],
+            damage: [ 65, 117, 234 ],
             range: 1,
             armor: 25,
             mr: 20,
             health: [ 750, 1350, 2700 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -913,6 +960,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 550, 990, 1980 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -924,15 +973,17 @@ const units = [{
         cost: 3,
         origin: [ 13 ],
         class: [2],
-        ability: 'For 20 seconds, empowers his basic attacks to bounce to [ 3 / 4 / 5 ] enemies within 1 hex, dealing [ 70% / 90% / 100% ] physical damage to secondary targets, and applying on-hit effects.',
+        ability: 'For 20 seconds, empowers his basic attacks to bounce to [ 3 / 4 / 5 ] enemies within 1 hex, dealing [ 80% / 90% / 100% ] physical damage to secondary targets, and applying on-hit effects.',
         stats: {
-            dps: [ 41, 74, 149 ],
-            as: 0.55,
+            dps: [ 49, 88, 176 ],
+            as: 0.65,
             damage: [ 75, 135, 270 ],
             range: 1,
             armor: 35,
             mr: 20,
-            health: [ 650, 1170, 2340 ],
+            health: [ 700, 1260, 2520 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -944,7 +995,7 @@ const units = [{
         cost: 3,
         origin: [ 10 ],
         class: [0],
-        ability: 'Deals [ 200 / 250 / 300 ] magic damage to the 3 closest enemies and blinks back 3 hexes. Damage is increased against enemies below 50 percent health by [ 3 / 4 / 5 ] times.',
+        ability: 'Deals [ 200 / 250 / 300 ] magic damage to the 3 closest enemies and blinks back 3 hexes. Damage is increased against enemies below 65% health by [ 3 / 5 / 7 ] times.',
         stats: {
             dps: [ 30, 54, 108 ],
             as: 0.6,
@@ -952,7 +1003,9 @@ const units = [{
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 550, 990, 1980 ],
+            health: [ 600, 1080, 2160 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -966,13 +1019,15 @@ const units = [{
         class: [ 1, 5 ],
         ability: '(Passive) Periodically spawns Powder Kegs. (Active) Detonates all active Powder Kegs, dealing [ 200 / 325 / 450 ] magic damage to enemies caught in the blast.',
         stats: {
-            dps: [ 33, 59, 119 ],
-            as: 0.6,
+            dps: [ 36, 64, 129 ],
+            as: 0.65,
             damage: [ 55, 99, 198 ],
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 600, 1080, 2160 ],
+            health: [ 700, 1260, 2520 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -993,6 +1048,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 450, 810, 1620 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -1004,7 +1061,7 @@ const units = [{
         cost: 3,
         origin: [ 17, 22 ],
         class: [ 3 ],
-        ability: 'Summons a storm around him for 3 seconds dealing [ 50 / 80 / 110 ] magic damage every .5s to nearby enemies, stunning them for 1.5s after 3 hits. Kennen starts with 50 mana.',
+        ability: 'Kennen summons a storm around him for 3s, dealing [ 400 / 650 / 900 ] damage and stunning enemies for 1.5s inside of it.',
         stats: {
             dps: [ 46, 82, 164 ],
             as: 0.65,
@@ -1013,6 +1070,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 550, 990, 1980 ],
+            startingMana: 50,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -1024,7 +1083,7 @@ const units = [{
         cost: 3,
         origin: [ 10 ],
         class: [ 9 ],
-        ability: 'Fires chains to nearby enemies up to 3 hexes away, dealing [ 250 / 350 / 450 ] magic damage, and slowing them by 20 percent while the chains hold. After 3 seconds if the chains held, deals additional magic damage and stuns enemies for [ 2 / 4 / 6 ] seconds. Morganna starts with 50 mana.',
+        ability: 'Fires chains to nearby enemies up to 3 hexes away, dealing [ 300 / 375 / 450 ] magic damage, and slowing them by 20% while the chains hold. After 3 seconds if the chains held, deals additional magic damage and stuns enemies for [ 2 / 4 / 6 ] seconds. Morganna starts with 50 mana.',
         stats: {
             dps: [ 30, 54, 108 ],
             as: 0.6,
@@ -1033,6 +1092,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 650, 1170, 2340 ],
+            startingMana: 50,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -1044,15 +1105,17 @@ const units = [{
         cost: 3,
         origin: [ 22 ],
         class: [ 6 ],
-        ability: 'After a .75s delay, swings her hammer at the closest enemy, dealing [ 300 / 400 / 500 ] magic damage, knocking them up for 1s, and stunning them for [ 1.5 / 2.5 / 3.5 ] seconds.',
+        ability: 'After a .75s delay, swings her hammer at the [ 1 / 2 / 3 ] enemies, dealing [ 300 / 400 / 500 ] magic damage, knocking them up for 1s, and stunning them for [ 2 / 3 / 4 ] seconds.',
         stats: {
             dps: [ 25, 45, 90 ],
             as: 0.5,
             damage: [ 50, 90, 180 ],
             range: 1,
-            armor: 30,
+            armor: 40,
             mr: 20,
-            health: [ 800, 1350, 2700 ],
+            health: [ 800, 1440, 2880 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -1073,6 +1136,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 550, 990, 1980 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -1092,7 +1157,9 @@ const units = [{
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 550, 990, 1980 ],
+            health: [ 650, 1170, 2340 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -1113,6 +1180,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 450, 810, 1620 ],
+            startingMana: 0,
+            manaCost: 75,
             critChance: 25
         }
     },
@@ -1124,7 +1193,7 @@ const units = [{
         cost: 4,
         origin: [ 21 ],
         class: [ 2 ],
-        ability: 'After a 1.5s delay, deals [ 200 / 400 / 600 ] magic damage and knocks up all enemies in a 3x3 area, stunning them for [ 2 / 2.25 / 2.5 ] seconds. Cho\'Gath starts with 50 mana.',
+        ability: 'After a 1.5s delay, deals [ 200 / 400 / 600 ] magic damage and knocks up all enemies in a 3x3 area, stunning them for [ 1.5 / 2 / 2.5 ] seconds.',
         stats: {
             dps: [ 39, 69, 139 ],
             as: 0.55,
@@ -1132,7 +1201,9 @@ const units = [{
             range: 1,
             armor: 20,
             mr: 20,
-            health: [1100, 1980, 3960],
+            health: [ 1000, 1800, 3600 ],
+            startingMana: 50,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -1153,6 +1224,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 700, 1260, 2520 ],
+            startingMana: 0,
+            manaCost: 25,
             critChance: 25
         }
     },
@@ -1173,6 +1246,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 0,
+            manaCost: 125,
             critChance: 25
         }
     },
@@ -1193,6 +1268,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 700, 1260, 2520 ],
+            startingMana: 0,
+            manaCost: 125,
             critChance: 25
         }
     },
@@ -1206,13 +1283,15 @@ const units = [{
         class: [1],
         ability: '(Passive) Basic attacks grant [ 150% / 200% / 250% ] bonus on-hit physical damage and [ 30% / 45% / 60% ] attack speed for 8 seconds, stacking up to two times.',
         stats: {
-            dps: [ 49, 88, 176 ],
-            as: 0.65,
+            dps: [ 56, 101, 203 ],
+            as: 0.75,
             damage: [ 75, 135, 270 ],
             range: 3,
             armor: 25,
             mr: 20,
             health: [ 700, 1260, 2520 ],
+            startingMana: 0,
+            manaCost: 50,
             critChance: 25
         }
     },
@@ -1230,9 +1309,11 @@ const units = [{
             as: 0.7,
             damage: [ 45, 81, 162 ],
             range: 2,
-            armor: 35,
+            armor: 30,
             mr: 20,
-            health: [ 850, 1530, 3060 ],
+            health: [ 750, 1350, 1700 ],
+            startingMana: 0,
+            manaCost: 125,
             critChance: 25
         }
     },
@@ -1253,6 +1334,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 600, 1080, 2160 ],
+            startingMana: 50,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -1264,7 +1347,7 @@ const units = [{
         cost: 4,
         origin: [ 16 ],
         class: [ 4 ],
-        ability: 'After a .625s delay, calls down a solar ray that deals [ 175 / 250 / 325 ] magic damage and slows all enemies within it. The enemy in the center of the ray is stunned for [ 5 / 8 / 11 ] seconds. Leona starts with 50 mana.',
+        ability: 'After a 0.625s delay, calls down a solar ray that deals [ 175 / 250 / 325 ] magic damage and slows all enemies within it. The enemy in the center of the ray is stunned for [ 5 / 8 / 11 ] seconds.',
         stats: {
             dps: [ 25, 45, 89 ],
             as: 0.55,
@@ -1273,6 +1356,8 @@ const units = [{
             armor: 55,
             mr: 20,
             health: [ 750, 1350, 2700 ],
+            startingMana: 50,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -1284,7 +1369,7 @@ const units = [{
         cost: 4,
         origin: [ 13 ],
         class: [ 6 ],
-        ability: 'Creates a large glacial storm that detonates after 2 seconds dealing [ 100 / 175 / 250 ] magic damage and stunning enemies within it for [ 3 / 4 / 5 ] seconds. Sejuani starts with 50 mana.',
+        ability: 'Creates a large glacial storm that detonates after 2 seconds dealing [ 100 / 175 / 250 ] magic damage and stunning enemies within it for [ 2 / 3.5 / 5 ] seconds.',
         stats: {
             dps: [ 25, 45, 89 ],
             as: 0.55,
@@ -1293,6 +1378,8 @@ const units = [{
             armor: 35,
             mr: 25,
             health: [ 850, 1530, 3060 ],
+            startingMana: 50,
+            manaCost: 150,
             critChance: 25
         }
     },
@@ -1313,6 +1400,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 650, 1170, 2340 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -1324,7 +1413,7 @@ const units = [{
         cost: 5,
         origin: [ 19 ],
         class: [ 9 ],
-        ability: 'Channel for 3 seconds to deal [ 350 / 550 / 850 ] magic damage to 4/7/10 random enemies, depending on Karthus’ level.',
+        ability: 'Channel for 3 seconds to deal [ 350 / 550 / 850 ] magic damage to [ 4 / 7 / 10 ] random enemies, depending on Karthus’ level.',
         stats: {
             dps: [ 42, 76, 152 ],
             as: 0.65,
@@ -1333,6 +1422,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 850, 1530, 3060 ],
+            startingMana: 0,
+            manaCost: 85,
             critChance: 25
         }
     },
@@ -1353,6 +1444,8 @@ const units = [{
             armor: 35,
             mr: 20,
             health: [ 800, 1440, 2880 ],
+            startingMana: 50,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -1373,6 +1466,8 @@ const units = [{
             armor: 20,
             mr: 20,
             health: [ 650, 1170, 2340 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -1393,6 +1488,8 @@ const units = [{
             armor: 25,
             mr: 20,
             health: [ 850, 1530, 3060 ],
+            startingMana: 0,
+            manaCost: 100,
             critChance: 25
         }
     },
@@ -1413,6 +1510,8 @@ const units = [{
             armor: 35,
             mr: 20,
             health: [ 700, 1260, 2520 ],
+            startingMana: 0,
+            manaCost: 25,
             critChance: 25
         }
     }

@@ -30,8 +30,11 @@ export class Unit extends Component {
     getTraitComponent = (e) => {
         return (
             <Link key={e} to={`/traits/${e}`}>
-                <img src={TraitData[e].image} alt="Trait Avatar" style={{backgroundColor: TraitData[e].color}} className="trait-avatar--mini"></img>
-                {/* {TraitData[e].name} • */}
+                <img
+                    src={TraitData[e].image}
+                    alt={`Link to ${TraitData[e].name}`}
+                    style={{backgroundColor: TraitData[e].color}}
+                    className="trait-avatar--mini" />
             </Link>
         );
     }
@@ -88,6 +91,14 @@ export class Unit extends Component {
                                         <TableCell align="right">{s.stats.as}</TableCell>
                                     </TableRow>
                                     <TableRow>
+                                        <TableCell>Start Mana</TableCell>
+                                        <TableCell align="right">{s.stats.startingMana}</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>Mana Cost</TableCell>
+                                        <TableCell align="right">{s.stats.manaCost}</TableCell>
+                                    </TableRow>
+                                    <TableRow>
                                         <TableCell>Range</TableCell>
                                         <TableCell align="right">{s.stats.range === 1 ? '1 Hex' : s.stats.range + ' Hexes'}</TableCell>
                                     </TableRow>
@@ -117,14 +128,5 @@ export class Unit extends Component {
         )
     }
 }
-// stats: {
-//     health: [600, 1080, 2160],
-//     dps: 25,
-//     as:	0.5,
-//     damage:	50,
-//     range:	1,
-//     armor: 25,
-//     mr:	20
-// }
 
 export default Unit;

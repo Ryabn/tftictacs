@@ -18,7 +18,7 @@ export class NavList extends Component {
                 tabColor = 'linear-gradient(135deg, rgba(54,209,220, 0.5), rgba(91,134,229, 0.5))';
                 break;
             case 'item':
-                tabColor = 'linear-gradient(135deg, rgba(127,0,255, 0.4), rgba(225,0,255, 0.4));';
+                tabColor = 'linear-gradient(135deg, rgba(127,0,255, 0.4), rgba(225,0,255, 0.4))';
                 break;
             default:
                 tabColor = 'white';
@@ -92,7 +92,7 @@ export class NavList extends Component {
                 subheader={
                     <Link to='/' delay={0}>
                         <ListSubheader component="div" style={{background: s.color}} id="nested-list-subheader">
-                            tft.help
+                            TFT • Help
                         </ListSubheader>
                     </Link>
                 }

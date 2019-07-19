@@ -93,7 +93,7 @@ let items = [
     {
         name: `Runaan's Hurricane`,
         id: 15,
-        stat: `Attacks 2 additional enemies. These additional attacks deal 50% damage.`,
+        stat: `Attacks 2 additional enemies. These additional attacks deal 25% damage.`,
         image: `${itemDDragonLink}3085.png`
     },
     {
@@ -159,7 +159,7 @@ let items = [
     {
         name: `Morellonomicon`,
         id: 26,
-        stat: `Spells burn 5% of the enemy max HP per second.`,
+        stat: `Spells burn 2.5% of the enemy max HP per second.`,
         image: `${itemDDragonLink}3165.png`
     },
     {
@@ -189,7 +189,7 @@ let items = [
     {
         name: `Zeke's Herald`,
         id: 31,
-        stat: `Adjacent allies gain +10% Attack Speed.`,
+        stat: `Allies two spaces to the left and right of the wearer gain +15% Attack Speed.`,
         image: `${itemDDragonLink}zekesherald.png`
     },
     {
@@ -258,7 +258,14 @@ let items = [
         stat: `Gain +1 team size.`,
         image: `${itemDDragonLink}4401.png`
     },
+    {
+        name: `Dragon's Claw`,
+        id: 43,
+        stat: `Gain 83% resistance to magic damage.`,
+        image: `${itemDDragonLink}dragonsclaw.png`
+    },
 ];
+
 
 let builds = [
     {
@@ -435,7 +442,7 @@ let builds = [
             },
             {
                 withItem: 4,
-                intoItem: 3,
+                intoItem: 43,
             },
             {
                 withItem: 5,
@@ -566,7 +573,47 @@ let builds = [
         ]
     },
 ];
+let compositions = {
+    8 : [ 1, 2 ],
+    9 : [ 2, 2 ],
+    10 : [ 6, 6 ],
+    11 : [ 1, 3 ],
+    12 : [ 2, 4 ],
+    13 : [ 1, 1 ],
+    14 : [ 0, 0 ],
+    15 : [ 4, 7 ],
+    16 : [ 3, 6 ],
+    17 : [ 5, 5 ],
+    18 : [ 3, 3 ],
+    19 : [ 0, 6 ],
+    20 : [ 1, 7 ],
+    21 : [ 1, 6 ],
+    22 : [ 3, 5 ],
+    23 : [ 2, 7 ],
+    24 : [ 2, 5 ],
+    25 : [ 3, 7 ],
+    26 : [ 0, 5 ],
+    27 : [ 1, 5 ],
+    28 : [ 5, 6 ],
+    29 : [ 0, 3 ],
+    30 : [ 2, 3 ],
+    31 : [ 0, 2 ],
+    32 : [ 2, 6 ],
+    33 : [ 0, 4 ],
+    34 : [ 0, 1 ],
+    35 : [ 0, 7 ],
+    36 : [ 1, 4 ],
+    37 : [ 3, 4 ],
+    38 : [ 4, 5 ],
+    39 : [ 4, 6 ],
+    40 : [ 5, 7 ],
+    41 : [ 6, 7 ],
+    42 : [ 7, 7 ],
+    43 : [ 4, 4 ]
+};
 
 export const Items = items;
 export const Builds = builds;
+export const Compositions = compositions;
 export const BaseItems = items.slice(0, 8);
+export const TotalItems = items.length;
