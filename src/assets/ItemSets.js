@@ -21,7 +21,7 @@ let items = [
     {
         name: `Recurve Bow`,
         id: 3,
-        stat: `+15% Attack Speed`,
+        stat: `+20% Attack Speed`,
         image: `${itemDDragonLink}1043.png`
     },
     {
@@ -147,7 +147,7 @@ let items = [
     {
         name: `Hextech Gunblade`,
         id: 24,
-        stat: `Heal for 25% of all damage dealt.`,
+        stat: `Heal for 33% of all damage dealt.`,
         image: `${itemDDragonLink}3146.png`
     },
     {
@@ -624,7 +624,6 @@ let decompositions = [
 ]
 
 let itemStats = {
-
 }
 
 export const Items = items;
