@@ -53,6 +53,10 @@ const theme = createMuiTheme({
         },
         h6: {
             fontFamily: 'Quicksand'
+        },
+        subtitle2: {
+            fontSize: '12px',
+            fontFamily: 'Quicksand'
         }
     }
 });

@@ -38,7 +38,6 @@ export class BuiltItem extends Component {
             <img
                 src={Items[id].image}
                 alt={`Link to ${Items[id].name}`}
-                // style={{backgroundColor: Items[id].color}}
                 className="item-avatar--mini" />
         </Link>
         );

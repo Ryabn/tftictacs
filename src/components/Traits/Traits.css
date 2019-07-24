@@ -27,6 +27,8 @@
     row-gap: 20px;
     column-gap: 20px;
     padding: 20px;
+    width: 100%;
+    height: min-content;
     box-sizing: border-box;
     max-width: 1000px;
 }
@@ -52,6 +54,7 @@
     box-sizing: border-box;
     row-gap: 20px;
     padding: 20px;
+    height: min-content;
     max-width: 1000px;
 }
 @media (min-width: 600px){

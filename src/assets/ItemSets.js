@@ -51,7 +51,7 @@ let items = [
     {
         name: `Guardian Angel`,
         id: 8,
-        stat: `Revives champ with 500 Health`,
+        stat: `Revives champ with 1000 Health`,
         image: `${itemDDragonLink}3026.png`
     },
     {
@@ -63,7 +63,7 @@ let items = [
     {
         name: `Seraph's Embrace`,
         id: 10,
-        stat: `Regain 20 mana each time a spell is cast`,
+        stat: `Regain 20 mana each time the wearer casts a spell`,
         image: `${itemDDragonLink}3040.png`
     },
     {
@@ -75,13 +75,13 @@ let items = [
     {
         name: `The Bloodthirster`,
         id: 12,
-        stat: `Attacks heal for 35% of the damage`,
+        stat: `Attacks heal for 50% of the damage`,
         image: `${itemDDragonLink}3072.png`
     },
     {
         name: `Thornmail`,
         id: 13,
-        stat: `Reflect 35% of the damage taken from attacks`,
+        stat: `Reflect 100% of mitigated damage taken from attacks as True Damage.`,
         image: `${itemDDragonLink}3075.png`
     },
     {
@@ -93,7 +93,7 @@ let items = [
     {
         name: `Runaan's Hurricane`,
         id: 15,
-        stat: `Attacks 2 additional enemies. These additional attacks deal 25% damage.`,
+        stat: `Attacks 2 additional enemies. These additional attacks deal 25% damage and apply on hit effects.`,
         image: `${itemDDragonLink}3085.png`
     },
     {
@@ -117,7 +117,7 @@ let items = [
     {
         name: `Redemption`,
         id: 19,
-        stat: `On death, heal all nearby allies for 1000 Health.`,
+        stat: `At 25% Health, heal all nearby allies for 1000 Health.`,
         image: `${itemDDragonLink}3107.png`
     },
     {
@@ -129,13 +129,13 @@ let items = [
     {
         name: `Frozen Heart`,
         id: 21,
-        stat: `Adjacent enemies Attack Speed is 20% Slower.`,
+        stat: `Adjacent enemies Attack Speed is 25% Slower.`,
         image: `${itemDDragonLink}3110.png`
     },
     {
         name: `Guinsoo's Rageblade`,
         id: 22,
-        stat: `Attacks grant 3% Attack Speed. Stacks infinitely.`,
+        stat: `Attacks grant 4% Attack Speed. Stacks infinitely but cannot pass the 2.5 Attack Speed limit.`,
         image: `${itemDDragonLink}3124.png`
     },
     {
@@ -159,7 +159,7 @@ let items = [
     {
         name: `Morellonomicon`,
         id: 26,
-        stat: `Spells burn 2.5% of the enemy max HP per second.`,
+        stat: `Spells deal burn damage equal to 15% of the enemy's maximum health over 5 seconds. Burned units cannot heal.`,
         image: `${itemDDragonLink}3165.png`
     },
     {
@@ -207,7 +207,7 @@ let items = [
     {
         name: `Red Buff`,
         id: 34,
-        stat: `Attacks burn for 2.5% max HP and disable healing.`,
+        stat: `Attacks deal 13% Maximum Health burn damage over 5 seconds and disable healing.`,
         image: `${itemDDragonLink}redbuff.png`
     },
     {
@@ -231,7 +231,7 @@ let items = [
     {
         name: `Ionic Spark`,
         id: 38,
-        stat: `Whenever an enemy casts a spell they take 200 damage.`,
+        stat: `Whenever an enemy casts a spell they take 200 true damage.`,
         image: `${itemDDragonLink}ionicspark.png`
     },
     {

@@ -7,7 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 import NavList from './NavList';
 import Link from '../DelayLink';
-// import {Units as unitsData, Traits as traitsData} from '../../assets/UnitSets';
+import {Units as unitsData, Traits as traitsData} from '../../assets/UnitSets';
+import {Items as itemData} from '../../assets/ItemSets';
 import {withRouter} from 'react-router-dom';
 import './Nav.css';
 
@@ -26,12 +27,25 @@ export class Nav extends Component {
         }
     }
     getCurrentDirectory = () => {
-        let urlPath = this.props.match.url.split('/');
-        urlPath[1] = urlPath[1].charAt(0).toUpperCase() + urlPath[1].slice(1);
-        let breadcrumb = [<Link key={1} to={'/' + urlPath[1]}>{urlPath[1]}</Link>];
-        let letter = parseInt(urlPath[2]);
+        let urlPath = this.props.match.url.split('/'), dir = this.props.tab + 's';
+        let breadcrumb = [<Link key={1} to={'/' + dir}>{dir.charAt(0).toUpperCase() + dir.slice(1)}</Link>];
+        let letter = parseInt(urlPath[2]), pageName;
+
         if(!isNaN(letter)){
-            breadcrumb.push( <Typography key={2}> {letter} </Typography> )
+            switch(this.props.tab){
+                case 'item':
+                    pageName = itemData[letter].name;
+                    break;
+                case 'trait':
+                    pageName = traitsData[letter].name;
+                    break;
+                case 'unit':
+                    pageName = unitsData[letter].name;
+                    break;
+                default:
+                    return;
+            }
+            breadcrumb.push( <Typography key={2}> {pageName} </Typography> )
         }
         return breadcrumb;
     }

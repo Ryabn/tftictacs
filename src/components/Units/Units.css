@@ -6,13 +6,14 @@
     height: 100vh;
     background: linear-gradient(135deg, rgba(255,153,102, 0.5), rgba(255,94,98, 0.5));
 }
-.units-list-holder{
+.units-list--holder{
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 20px;
     column-gap: 20px;
     padding: 20px;
     box-sizing: border-box;
+    height: min-content;
     max-width: 1000px;
 }
 .unit-avatar{
@@ -26,6 +27,8 @@
     row-gap: 20px;
     padding: 20px;
     box-sizing: border-box;
+    height: min-content;
+    width: 100%;
     max-width: 1000px;
 }
 .unit-trait--holder{
@@ -42,6 +45,27 @@
     border-radius: 50%;
     margin: 0px 10px -10px 10px;
     padding: 5px;
+}
+.units-controls--holder{
+    padding: 16px;
+}
+.units-sort-by--holder{
+    display: grid;
+    height: 350px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 2px;
+}
+.units-sort-by--holder > div {
+    transition: 200ms all;
+    text-align: center;
+    border: 1px solid rgb(231, 231, 231);
+    padding: 10px;
+}
+.units-sort-by--holder > div:hover{
+    border: 1px solid rgba(255,153,102, 1);
+    color: rgba(255,153,102, 1);
 }
 @media (min-width: 600px){
     .units-list-holder{
