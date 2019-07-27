@@ -3,9 +3,14 @@ import {createMuiTheme} from '@material-ui/core';
 
 const theme = createMuiTheme({
     overrides: {
-        MuiCard: {
+        MuiButton: {
             root: {
                 fontFamily: 'Quicksand'
+            }
+        },
+        MuiCard: {
+            root: {
+                fontFamily: 'Quicksand',
             }
         },
         MuiCardActionArea: {

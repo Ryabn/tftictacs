@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Units as UnitData } from '../../assets/UnitSets';
-import {Card, Paper, Container, Typography} from '@material-ui/core';
+import {Button, Dialog, DialogTitle, DialogContent, DialogActions, Select, MenuItem, Switch} from '@material-ui/core';
+import TuneIcon from '@material-ui/icons/TuneRounded';
 import Unit from './Unit';
 import Nav from '../Nav/Nav';
 import './Units.css';
@@ -10,60 +11,65 @@ export class Units extends Component {
         super(props);
         let unitObjects = []
         UnitData.forEach( e => {
-            unitObjects.push(<Unit key={e.id} id={e.id}/>);
+            unitObjects.push(<Unit key={e.id} id={e.id} />);
         });
         this.state = {
             units: unitObjects,
+            filterDialog: false
         }
+    }
+    closeDialog = () => {
+        this.setState({filterDialog: false});
+    }
+    applyFilterAndCloseDialog = () => {
+
+        this.closeDialog();
     }
     render() {
         const s = this.state;
         return (
             <div className="units-page">
                 <Nav tab={'unit'}/>
+                <Dialog open={s.filterDialog} onClose={this.closeDialog}>
+                    <DialogTitle>Filter Units</DialogTitle>
+                    <DialogContent className="units-sort-by--holder">
+                        Sort By
+                        <Select
+                            // onChange={handleChange}
+                            inputProps={{
+                                name: 'age',
+                                id: 'age-simple',
+                            }}
+                            >
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                        Reverse Order
+                        <Switch checked={false} />
+                    </DialogContent>
+                    <DialogActions>
+                    <Button onClick={this.applyFilterAndCloseDialog} color="primary">
+                        Filter
+                    </Button>
+                    <Button onClick={this.closeDialog} color="primary">
+                        Cancel
+                    </Button>
+                    </DialogActions>
+                </Dialog>
                 <div className="scrollable-list">
                     <div className="units-list--holder">
-                        <Card className="units-controls--holder">
-                            <Typography variant="h6" component="div">Sort by:</Typography>
-                            <div className="units-sort-by--holder">
-                                <div>
-                                    <Typography variant="h6" component="div"> DPS </Typography>
-                                    <Typography variant="subtitle2" component="div"> Damage per Second </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> DMG </Typography>
-                                    <Typography variant="subtitle2" component="div"> Damage </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> AS </Typography>
-                                    <Typography variant="subtitle2" component="div"> Attack Speed </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> Start Mana </Typography>
-                                    <Typography variant="subtitle2" component="div"> Starting Mana </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> Mana Cost </Typography>
-                                    <Typography variant="subtitle2" component="div"> Spell Mana Cost </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> Range </Typography>
-                                    <Typography variant="subtitle2" component="div"> Basic attack range </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> Armor </Typography>
-                                    <Typography variant="subtitle2" component="div"> Physical damage reduction </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> MR </Typography>
-                                    <Typography variant="subtitle2" component="div"> Magic damage reduction </Typography>
-                                </div>
-                                <div>
-                                    <Typography variant="h6" component="div"> Health </Typography>
-                                    <Typography variant="subtitle2" component="div"> Total HP at level 1 </Typography>
-                                </div>
-                            </div>
-                        </Card>
+                        <div className="units-sort-by--trigger">
+                        <Button 
+                            variant="outlined"
+                            onClick={() => {this.setState({filterDialog: true})}}
+                            style={{borderColor: '#47006b',
+                                    color: '#47006b'}}    
+                        >
+                            Filter
+                            <TuneIcon style={{marginLeft: '10px'}}/>
+                        </Button>
+                        </div>
                         {s.units}
                     </div>
                 </div>

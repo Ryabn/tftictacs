@@ -8,7 +8,7 @@ const classes = [
         color: '#451363',
         bonus: [{
                 count: 3,
-                text: '+150% critical strike damage.'
+                text: '+125% critical strike damage.'
             },
             {
                 count: 6,
@@ -160,7 +160,7 @@ const classes = [
         bonus: [
             {
                 count: 3,
-                text: '+35% spell damage'
+                text: '+45% spell damage'
             },
             {
                 count: 6,
@@ -338,7 +338,7 @@ const origins = [
     },
     {
         name: 'Wild',
-        text: 'Attacks generate stacks of Fury (up to 5). Each stack of Fury grants 8% Attack Speed.',
+        text: 'Attacks generate stacks of Fury (up to 5). Each stack of Fury grants 10% Attack Speed.',
         image: `${traitIconLink}wild.png`,
         id: 20,
         color: '#51B241',
@@ -643,7 +643,7 @@ const units = [{
         cost: 2,
         origin: [ 20 ],
         class: [ 9 ],
-        ability: 'Fires an orb in a line that returns to her, dealing [ 100 / 175 / 250 ] magic damage to enemies it passes through.',
+        ability: 'Fires an orb in a line that returns to her, dealing [ 100 / 200 / 300 ] magic damage to enemies it passes through.',
         stats: {
             dps: [ 28, 50, 99 ],
             as: 0.55,
@@ -979,7 +979,7 @@ const units = [{
             as: 0.65,
             damage: [ 75, 135, 270 ],
             range: 1,
-            armor: 35,
+            armor: 30,
             mr: 20,
             health: [ 700, 1260, 2520 ],
             startingMana: 0,
@@ -999,11 +999,11 @@ const units = [{
         stats: {
             dps: [ 30, 54, 108 ],
             as: 0.6,
-            damage: [ 50, 90, 180 ],
+            damage: [ 60, 90, 180 ],
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 600, 1080, 2160 ],
+            health: [ 550, 1080, 2160 ],
             startingMana: 0,
             manaCost: 75,
             critChance: 25
@@ -1218,12 +1218,12 @@ const units = [{
         ability: 'Deals [ 200 / 375 / 550 ] magic damage to all enemies in a cone.',
         stats: {
             dps: [ 53, 95, 189 ],
-            as: 0.75,
+            as: 0.7,
             damage: [ 70, 126, 252 ],
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 700, 1260, 2520 ],
+            health: [ 650, 1260, 2520 ],
             startingMana: 0,
             manaCost: 25,
             critChance: 25
