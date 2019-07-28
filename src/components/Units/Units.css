@@ -51,17 +51,13 @@
 }
 .units-sort-by--trigger{
     text-align: right;
-    margin: 0;
 }
 .units-sort-by--holder{
     display: grid;
+    /* justify-items: end; */
     row-gap: 20px;
     column-gap: 15px;
     grid-template-columns: 1fr 1fr;
-}
-.units-sort-by--holder > div:hover{
-    border: 1px solid rgba(255,153,102, 1);
-    color: rgba(255,153,102, 1);
 }
 @media (min-width: 600px){
     .units-list-holder{

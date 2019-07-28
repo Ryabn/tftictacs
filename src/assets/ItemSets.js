@@ -159,7 +159,7 @@ let items = [
     {
         name: `Morellonomicon`,
         id: 26,
-        stat: `Spells deal burn damage equal to 15% of the enemy's maximum health over 5 seconds. Burned units cannot heal.`,
+        stat: `Spells deal burn damage equal to 25% of the enemy's maximum health over 5 seconds. Burned units cannot heal.`,
         image: `${itemDDragonLink}3165.png`
     },
     {
@@ -219,13 +219,13 @@ let items = [
     {
         name: `Sword Breaker`,
         id: 36,
-        stat: `Attacks have a chance to disarm.`,
+        stat: `Attacks have a 25% chance to disarm.`,
         image: `${itemDDragonLink}swordbreaker.png`
     },
     {
         name: `Cursed Blade`,
         id: 37,
-        stat: `Attacks have a low chance to Shrink (-1 enemy star level 1).`,
+        stat: `Attacks have a 20% chance to Shrink (-1 enemy star level 1).`,
         image: `${itemDDragonLink}cursedblade.png`
     },
     {
@@ -237,14 +237,17 @@ let items = [
     {
         name: `Hush`,
         id: 39,
-        stat: `Attacks have a high chance to Silence.`,
+        stat: `Attacks have a 50% chance to Silence.`,
         image: `${itemDDragonLink}hush.png`
     },
     {
         name: `Yuumi`,
         id: 40,
         stat: `Wearer is also a Sorcerer.`,
-        image: `${itemDDragonLink}yuumi.png`
+        image: `${itemDDragonLink}yuumi.png`,
+        notes: [
+            'The wearer also gains double mana from attacks (part of the sorcerer bonus)'
+        ]
     },
     {
         name: `Darkin`,

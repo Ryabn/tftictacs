@@ -60,7 +60,7 @@ const classes = [
         bonus: [
             {
                 count: 3,
-                text: 'At the start of combat, summon an Elemental.'
+                text: 'At the start of combat, summon an Elemental that has 2200 HP with 100 Attack Damage.'
             }
         ],
         units: [ 15, 30, 39, 45 ]
@@ -77,7 +77,10 @@ const classes = [
                 text: 'At the start of combat, all Guardians and adjacent allies receive +30 armor.'
             }
         ],
-        units: [ 13, 43 ]
+        units: [ 13, 43 ],
+        notes: [
+            'The Guardian buff does not disappear when the guardian dies in battle'
+        ]
     },
     {
         name: 'Gunslinger',
@@ -450,7 +453,7 @@ const units = [{
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 450, 850, 1750 ],
+            health: [ 450, 810, 1620 ],
             startingMana: 0,
             manaCost: 0,
             critChance: 25
@@ -516,7 +519,7 @@ const units = [{
             range: 1,
             armor: 35,
             mr: 20,
-            health: [ 500, 900, 1800 ],
+            health: [ 550, 990, 1980 ],
             startingMana: 0,
             manaCost: 100,
             critChance: 25
@@ -554,8 +557,8 @@ const units = [{
         class: [ 5 ],
         ability: 'Places a bomb on her current target that detonates after 4 seconds or 4 attacks, dealing [ 150 / 225 / 300  ] magic damage to enemies up to 2 hexes away. The damage is increased by 50 percent with each attack.',
         stats: {
-            dps: [ 35, 63, 126 ],
-            as: 0.7,
+            dps: [ 33, 59, 117 ],
+            as: 0.65,
             damage: [ 50, 90, 180 ],
             range: 4,
             armor: 20,
@@ -973,10 +976,10 @@ const units = [{
         cost: 3,
         origin: [ 13 ],
         class: [2],
-        ability: 'For 20 seconds, empowers his basic attacks to bounce to [ 3 / 4 / 5 ] enemies within 1 hex, dealing [ 80% / 90% / 100% ] physical damage to secondary targets, and applying on-hit effects.',
+        ability: 'For 20 seconds, empowers his basic attacks to bounce to [ 2 / 3 / 4 ] enemies within 1 hex, dealing [ 80% / 90% / 100% ] physical damage to secondary targets, and applying on-hit effects.',
         stats: {
-            dps: [ 49, 88, 176 ],
-            as: 0.65,
+            dps: [ 41, 74, 149 ],
+            as: 0.55,
             damage: [ 75, 135, 270 ],
             range: 1,
             armor: 30,
@@ -997,13 +1000,13 @@ const units = [{
         class: [0],
         ability: 'Deals [ 200 / 250 / 300 ] magic damage to the 3 closest enemies and blinks back 3 hexes. Damage is increased against enemies below 65% health by [ 3 / 5 / 7 ] times.',
         stats: {
-            dps: [ 30, 54, 108 ],
+            dps: [ 36, 65, 130 ],
             as: 0.6,
-            damage: [ 60, 90, 180 ],
+            damage: [ 60, 108, 216 ],
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 550, 1080, 2160 ],
+            health: [ 550, 990, 1980 ],
             startingMana: 0,
             manaCost: 75,
             critChance: 25
@@ -1063,9 +1066,9 @@ const units = [{
         class: [ 3 ],
         ability: 'Kennen summons a storm around him for 3s, dealing [ 400 / 650 / 900 ] damage and stunning enemies for 1.5s inside of it.',
         stats: {
-            dps: [ 46, 82, 164 ],
+            dps: [ 42, 76, 152 ],
             as: 0.65,
-            damage: [ 70, 126, 252 ],
+            damage: [ 65, 117, 234 ],
             range: 2,
             armor: 20,
             mr: 20,
@@ -1105,7 +1108,7 @@ const units = [{
         cost: 3,
         origin: [ 22 ],
         class: [ 6 ],
-        ability: 'After a .75s delay, swings her hammer at the [ 1 / 2 / 3 ] enemies, dealing [ 300 / 400 / 500 ] magic damage, knocking them up for 1s, and stunning them for [ 2 / 3 / 4 ] seconds.',
+        ability: 'After a .75s delay, swings her hammer at the [ 1 / 2 / 3 ] enemies, dealing [ 300 / 500 / 700 ] magic damage, knocking them up for 1s, and stunning them for [ 2 / 3 / 4 ] seconds.',
         stats: {
             dps: [ 25, 45, 90 ],
             as: 0.5,
@@ -1127,11 +1130,11 @@ const units = [{
         cost: 3,
         origin: [ 20 ],
         class: [0],
-        ability: 'Leaps at the weakest enemy, dealing [ 210% / 320% / 430% ] physical damage, and gaining [ 50% / 65% / 80% ] attack speed and 25% critical strike chance for 6 seconds.',
+        ability: 'Leaps at the weakest enemy, dealing [ 200% / 300% / 400% ] physical damage, and gaining [ 30% / 50% / 70% ] attack speed and 25% critical strike chance for 6 seconds.',
         stats: {
-            dps: [ 30, 54, 109 ],
+            dps: [ 36, 64, 129 ],
             as: 0.55,
-            damage: [ 55, 99, 198 ],
+            damage: [ 65, 117, 234 ],
             range: 1,
             armor: 20,
             mr: 20,
@@ -1217,13 +1220,13 @@ const units = [{
         class: [ 0 ],
         ability: 'Deals [ 200 / 375 / 550 ] magic damage to all enemies in a cone.',
         stats: {
-            dps: [ 53, 95, 189 ],
+            dps: [ 49, 88, 176 ],
             as: 0.7,
             damage: [ 70, 126, 252 ],
             range: 1,
             armor: 20,
             mr: 20,
-            health: [ 650, 1260, 2520 ],
+            health: [ 650, 1170, 2340 ],
             startingMana: 0,
             manaCost: 25,
             critChance: 25
