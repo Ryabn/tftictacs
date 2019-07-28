@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Units as UnitData } from '../../assets/UnitSets';
-import {Button, Dialog, DialogTitle, DialogContent, DialogActions, Select, MenuItem, Switch} from '@material-ui/core';
+import {Button, Dialog, DialogTitle, DialogContent, DialogActions, Select, MenuItem, Switch, FormControl, FormLabel, RadioGroup, Radio, FormControlLabel, Collapse} from '@material-ui/core';
 import {USortByAS, USortByArmor, USortByDMG, USortByDPS, USortByHealth, USortByHealth2, USortByHealth3, USortByMR, USortByRange, USortByManaCost, USortByStartingMana, USortByName} from '../../assets/SortedSets';
 import TuneIcon from '@material-ui/icons/TuneRounded';
 import Unit from './Unit';
@@ -18,7 +17,9 @@ export class Units extends Component {
             units: unitObjects,
             filterItem: 0,
             filterOrder: false,
-            filterDialog: false
+            filterDialog: false,
+            filterLevel: '1',
+            showFilterLevel: false
         }
     }
     closeDialog = () => {
@@ -37,27 +38,34 @@ export class Units extends Component {
                 unitList = USortByDMG;
                 break;
             case 4:
-                unitList = USortByHealth;
+                switch(this.state.filterLevel){
+                    case '1':
+                        unitList = USortByHealth;
+                        break;
+                    case '2':
+                        unitList = USortByHealth2;
+                        break;
+                    case '3':
+                        unitList = USortByHealth3;
+                        break;
+                    default: 
+                        unitList = USortByHealth;
+                        break;
+                }
                 break;
             case 5:
-                unitList = USortByHealth2;
-                break;
-            case 6:
-                unitList = USortByHealth3;
-                break;
-            case 7:
                 unitList = USortByRange;
                 break;
-            case 8:
+            case 6:
                 unitList = USortByArmor;
                 break;
-            case 9:
+            case 7:
                 unitList = USortByMR;
                 break;
-            case 10:
+            case 8:
                 unitList = USortByManaCost;
                 break;
-            case 11:
+            case 9:
                 unitList = USortByStartingMana;
                 break;
             default: 
@@ -78,6 +86,14 @@ export class Units extends Component {
         this.setState({units: unitObjects}, this.closeDialog);
     }
     handleChange = (event) => {
+        if( event.target.value === 2 ||
+            event.target.value === 3 ||
+            event.target.value === 4
+        ){
+            this.setState({showFilterLevel: true});
+        }else{
+            this.setState({showFilterLevel: false});
+        }
         this.setState({ filterItem: event.target.value });
     };
     changeOrder = () => {
@@ -85,92 +101,99 @@ export class Units extends Component {
             filterOrder: !state.filterOrder
         }));
     }
+    changeLevel = (event) => {
+        this.setState({filterLevel: event.target.value});
+    }
     render() {
         const s = this.state;
         return (
-            <div className="units-page">
-                <Nav tab={'unit'}/>
-                <Dialog open={s.filterDialog} onClose={this.closeDialog}>
-                    <DialogTitle> Filter Units </DialogTitle>
-                    <DialogContent className="units-sort-by--holder">
-                        Sort By
-                        <Select
-                            value={s.filterItem}
-                            onChange={this.handleChange}
-                            style={{overflowX: 'hidden'}}
-                            >
-                            <MenuItem value={0}>Alphabetical</MenuItem>
-                            <MenuItem value={1}>Attack Speed</MenuItem>
-                            <MenuItem value={2}>Damage Per Second</MenuItem>
-                            <MenuItem value={3}>Damage</MenuItem>
-                            <MenuItem value={4}>Health @ 1</MenuItem>
-                            <MenuItem value={5}>Health @ 2</MenuItem>
-                            <MenuItem value={6}>Health @ 3</MenuItem>
-                            <MenuItem value={7}>Range</MenuItem>
-                            <MenuItem value={8}>Armor</MenuItem>
-                            <MenuItem value={9}>Magic Resist</MenuItem>
-                            <MenuItem value={10}>Mana Cost</MenuItem>
-                            <MenuItem value={11}>Starting Mana</MenuItem>
-                        </Select>
-                        <FormControl component="fieldset">
-                            <FormLabel component="legend">labelPlacement</FormLabel>
-                            <RadioGroup aria-label="position" name="position" value={value} onChange={handleChange} row>
-                                <FormControlLabel
-                                value="top"
-                                control={<Radio color="primary" />}
-                                label="Top"
-                                labelPlacement="top"
-                                />
-                                <FormControlLabel
-                                value="start"
-                                control={<Radio color="primary" />}
-                                label="Start"
-                                labelPlacement="start"
-                                />
-                                <FormControlLabel
-                                value="bottom"
-                                control={<Radio color="primary" />}
-                                label="Bottom"
-                                labelPlacement="bottom"
-                                />
-                                <FormControlLabel
-                                value="end"
-                                control={<Radio color="primary" />}
-                                label="End"
-                                labelPlacement="end"
-                                />
-                            </RadioGroup>
-                            </FormControl>
-                        Reverse Order
-                        <Switch checked={s.filterOrder} onClick={this.changeOrder} style={{justifySelf: 'end',}}/>
-                    </DialogContent>
-                    <DialogActions>
-                    <Button onClick={this.applyFilterAndCloseDialog} color="primary">
-                        Filter
-                    </Button>
-                    <Button onClick={this.closeDialog} color="primary">
-                        Cancel
-                    </Button>
-                    </DialogActions>
-                </Dialog>
-                <div className="scrollable-list">
-                    <div className="units-list--holder">
-                        <div className="units-sort-by--trigger">
-                        <Button 
-                            variant="outlined"
-                            onClick={() => {this.setState({filterDialog: true})}}
-                            style={{borderColor: '#47006b',
-                                    color: '#47006b'}}    
+        <div className="units-page">
+            <Nav tab={'unit'}/>
+            <Dialog open={s.filterDialog} onClose={this.closeDialog}>
+                <DialogTitle> Filter Units </DialogTitle>
+                <DialogContent className="units-sort-by--holder">
+                    Sort By
+                    <Select
+                        value={s.filterItem}
+                        onChange={this.handleChange}
+                        style={{overflowX: 'hidden'}}
+                    >
+                        <MenuItem value={0}>Alphabetical</MenuItem>
+                        <MenuItem value={1}>Attack Speed</MenuItem>
+                        <MenuItem value={2}>Damage Per Second</MenuItem>
+                        <MenuItem value={3}>Damage</MenuItem>
+                        <MenuItem value={4}>Health</MenuItem>
+                        <MenuItem value={5}>Range</MenuItem>
+                        <MenuItem value={6}>Armor</MenuItem>
+                        <MenuItem value={7}>Magic Resist</MenuItem>
+                        <MenuItem value={8}>Mana Cost</MenuItem>
+                        <MenuItem value={9}>Starting Mana</MenuItem>
+                    </Select>
+                    <Collapse in={s.showFilterLevel} className="unit-level--select" >
+                    <FormControl component="fieldset" style={{width: '100%'}}>
+                        <FormLabel component="legend">Unit Level</FormLabel>
+                        <RadioGroup
+                            aria-label="position"
+                            name="position"
+                            value={s.filterLevel}
+                            className="unit-level-radio--holder"
+                            onChange={this.changeLevel}
+                            row
                         >
-                            Filter
-                            <TuneIcon style={{marginLeft: '10px'}}/>
-                        </Button>
-                        </div>
-                        {s.units}
+                            <FormControlLabel
+                            value={'1'}
+                            control={<Radio />}
+                            label='1'
+                            labelPlacement="bottom"
+                            style={{margin: '0'}}
+                            />
+                            <FormControlLabel
+                            value='2'
+                            control={<Radio />}
+                            label='2'
+                            labelPlacement="bottom"
+                            style={{margin: '0'}}
+                            />
+                            <FormControlLabel
+                            value='3'
+                            control={<Radio />}
+                            label='3'
+                            labelPlacement="bottom"
+                            style={{margin: '0'}}
+                            />
+                        </RadioGroup>
+                        </FormControl>
+                    </Collapse>
+                    Reverse Order
+                    <Switch checked={s.filterOrder} onClick={this.changeOrder} style={{justifySelf: 'end'}}/>
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={this.applyFilterAndCloseDialog}>
+                    Filter
+                </Button>
+                <Button onClick={this.closeDialog}>
+                    Cancel
+                </Button>
+                </DialogActions>
+            </Dialog>
+            <div className="scrollable-list">
+                <div className="units-list--holder">
+                    <div className="units-sort-by--trigger">
+                    <Button 
+                        variant="outlined"
+                        onClick={() => {this.setState({filterDialog: true})}}
+                        style={{borderColor: '#47006b',
+                                color: '#47006b'}}    
+                    >
+                        Filter
+                        <TuneIcon style={{marginLeft: '10px'}}/>
+                    </Button>
                     </div>
+                    {s.units}
                 </div>
             </div>
-        )
+        </div>
+        );
     }
 }
 

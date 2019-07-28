@@ -52,6 +52,13 @@
 .units-sort-by--trigger{
     text-align: right;
 }
+.unit-level--select{
+    grid-column: 1/3;
+}
+.unit-level-radio--holder{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 .units-sort-by--holder{
     display: grid;
     /* justify-items: end; */

@@ -626,9 +626,6 @@ let decompositions = [
     [ 35, 20, 23, 25, 15, 40, 41, 42 ]
 ]
 
-let itemStats = {
-}
-
 export const Items = items;
 // export const Builds = builds;
 export const Compositions = compositions;

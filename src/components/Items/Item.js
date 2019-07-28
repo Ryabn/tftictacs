@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Items } from '../../assets/ItemSets';
-import {Card, CardHeader, CardContent, Typography} from '@material-ui/core';
+import {Card, CardHeader} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './Items.css';
 

@@ -33,6 +33,12 @@ const theme = createMuiTheme({
                 boxSizing: 'border-box'
             }
         },
+        MuiFormLabel:{
+            root: {
+                fontFamily: 'Quicksand',
+                color: 'black'
+            }
+        },
         MuiAppBar: {
             root: {
                 fontFamily: 'Quicksand'
