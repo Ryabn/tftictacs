@@ -32,10 +32,36 @@ export class Units extends Component {
                 unitList = USortByAS;
                 break;
             case 2:
-                unitList = USortByDPS;
+                switch(this.state.filterLevel){
+                    case '1':
+                        unitList = USortByDPS;
+                        break;
+                    case '2':
+                        unitList = USortByDPS;
+                        break;
+                    case '3':
+                        unitList = USortByDPS;
+                        break;
+                    default: 
+                        unitList = USortByDPS;
+                        break;
+                }
                 break;
             case 3:
-                unitList = USortByDMG;
+                switch(this.state.filterLevel){
+                    case '1':
+                        unitList = USortByDMG;
+                        break;
+                    case '2':
+                        unitList = USortByDMG;
+                        break;
+                    case '3':
+                        unitList = USortByDMG;
+                        break;
+                    default: 
+                        unitList = USortByDMG;
+                        break;
+                }
                 break;
             case 4:
                 switch(this.state.filterLevel){
